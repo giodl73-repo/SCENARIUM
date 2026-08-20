@@ -25,6 +25,12 @@ Product files/modules to edit:
 - Add schema version fields or versioned document envelopes.
 - Add packet validation for missing references and optional digests.
 - Add golden JSON fixtures and complete comparison tables.
+- Define collision-resistant run identity including seed identity.
+- Remove zero-seed aliasing and define bounded RNG bias guarantees.
+- Prevent target metrics without targets and reject non-finite derived deltas.
+- Require candidate variants and at least one comparable metric.
+- Validate deserialized/publicly constructed records before use.
+- Canonicalize packet membership and enforce run/comparison reference closure.
 - Update README compatibility policy.
 
 Exit criteria:
@@ -33,6 +39,11 @@ Exit criteria:
 - All comparison statuses and invalid-input classes have tests.
 - Identical inputs produce byte-identical fixture output.
 - No silent artifact replacement, missing metric, or missing reference succeeds.
+- Distinct supported seeds and seed labels cannot silently collapse to one run identity.
+- Empty comparisons, baseline-as-candidate comparisons, targetless metrics, and
+  non-finite derived deltas return structured errors.
+- Deserialized records pass the same invariants as constructor-created records.
+- FIND-001, FIND-002, FIND-004, and FIND-007 through FIND-013 are closed.
 
 Review gate: API Stability Reviewer, Simulation Auditor, Adversarial Evidence Reviewer.
 
@@ -91,7 +102,9 @@ Exit criteria:
 
 - Consumer uses SCENARIUM directly.
 - Consumer metrics and policy remain local.
-- Before/after deletion ledger shows net simplification.
+- Before/after deletion ledger shows neutral production LOC removed exceeds
+  adopter glue LOC added, excluding tests, fixtures, generated files, and docs.
+- At least one duplicated neutral public type family is removed.
 - No new general API is added solely for one adopter.
 
 Review gate: Consumer Advocate, Rust Ecosystem Maintainer, Runtime Boundary Engineer.
@@ -116,4 +129,3 @@ Review gate: API Stability Reviewer, Rust Ecosystem Maintainer, Evidence Custodi
 - [x] Critical work names code-rigor constraints.
 - [x] Every package has exit criteria and validation levels.
 - [x] No package is process-only cleanup.
-

@@ -20,6 +20,8 @@ Language/toolchain: stable Rust 2021, rustfmt, Clippy, cargo test, cargo package
 | CR-006 | `unsafe` code is forbidden in the foundation and first adoption waves. | Whole crate | source inspection | Requires a separate design gate. |
 | CR-007 | Public serialized enums and fields require change-control review and retained fixtures. | JSON surfaces | diff/fixture review | None after schema v1. |
 | CR-008 | Dependencies require a named product capability, license check, and deletion/maintenance rationale. | Cargo manifest | manifest review | Dev-only test dependencies may use a lighter review. |
+| CR-009 | Constructor, deserialization, mutation, and pre-serialization paths shall enforce the same public invariants. | Public records | invalid fixture and mutation tests | No waiver for persisted evidence. |
+| CR-010 | Derived numeric values shall remain finite or return structured arithmetic errors. | Comparison logic | boundary-value tests | No silent saturation or fallback. |
 
 ## Tailoring
 
@@ -29,6 +31,8 @@ Language/toolchain: stable Rust 2021, rustfmt, Clippy, cargo test, cargo package
 | Errors | Keep a typed error enum; add context without string matching as a contract. | Consumers need structured failures. |
 | Serialization | Use ordered collections and golden fixtures. | Identical inputs must remain byte-stable. |
 | Numeric values | Reject NaN and infinity; document float comparison semantics. | Non-finite evidence is not portable or trustworthy. |
+| Random sampling | Document statistical guarantees; bounded sampling may not silently introduce avoidable bias. | Simulation metrics can be skewed by RNG behavior. |
+| Evidence identity | Include every identity-bearing seed/scenario/variant input or document an intentional equivalence class. | Distinct runs must not collapse silently. |
 
 ## Exceptions / Waivers
 
@@ -40,4 +44,3 @@ None accepted.
 |---|---|---|---|---|
 | EVID-CR-001 | CR-005/006 | `cargo fmt --check; cargo clippy --all-targets -- -D warnings; cargo test` and source inspection | current pass | CI and local run |
 | EVID-CR-002 | CR-001 | Current `src/lib.rs` review | risk accepted for foundation only | FIND-004 in `REVIEW.md` |
-

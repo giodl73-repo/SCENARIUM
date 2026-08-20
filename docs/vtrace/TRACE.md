@@ -14,6 +14,10 @@
 | REQ-010 | Non-game proof and deletion | SPEC-008 | CR-008 | WP-004 | adopter integration | integration/diff analysis | VAL-003 | EVID-ADOPT-001 | proposed |
 | REQ-011 | Ecosystem maintenance contract | SPEC-005/IF-001 | CR-005/007/008 | WP-005 | Cargo/docs/fixtures | package/docs inspection | release review | EVID-RELEASE-001 | proposed |
 | REQ-012 | Packet integrity | SPEC-004 | CR-003/004 | WP-001 | packet validation | adversarial tests | VAL-002/003 | EVID-ADV-001 | proposed |
+| REQ-013 | Consistent record invariants | SPEC-009 | CR-003/004/009 | WP-001 | constructors, serde, validation | invalid fixture/mutation tests | VAL-004 | EVID-ADV-001 | proposed |
+| REQ-014 | Collision-resistant run identity | SPEC-009 | CR-004 | WP-001 | seed and run identity | collision tests | VAL-001/003 | EVID-ADV-001 | proposed |
+| REQ-015 | Valid non-empty finite comparison | SPEC-010 | CR-002/003/004/010 | WP-001 | comparison logic | boundary/negative tests | VAL-004 | EVID-ADV-001 | proposed |
+| REQ-016 | Explicit bounded RNG guarantee | SPEC-010 | CR-002/004 | WP-001 | seed module | algorithm/distribution tests | VAL-003/004 | EVID-ADV-001 | proposed |
 | REQ-D-001 | Deferred `no_std` support | deferred | n/a | deferred | none | named-adopter review | deferred scenario | n/a | deferred |
 | REQ-D-002 | Deferred statistical inference | deferred | n/a | deferred | none | repeated-need review | deferred scenario | n/a | deferred |
 | REQ-D-003 | Deferred runtime orchestration | deferred | n/a | deferred | none | separate-owner review | deferred scenario | n/a | deferred |

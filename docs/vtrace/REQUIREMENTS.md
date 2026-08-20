@@ -20,6 +20,10 @@ SCENARIUM public Rust contract and first two adoption paths.
 | REQ-010 | One non-game adopter shall use SCENARIUM directly and demonstrate deterministic comparison plus measurable neutral-code deletion. | VAL-003 | A second adopter is required before generalization. | must | Consumer Advocate | integration test and diff analysis | accepted |
 | REQ-011 | The crate shall document MSRV, dependency policy, feature policy, and semantic-versioning rules before crates.io publication. | Ecosystem release | Adoption requires predictable maintenance. | must | Rust Ecosystem Maintainer | package inspection | proposed |
 | REQ-012 | Evidence integrity shall support optional caller-provided digests and detect contradictory or incomplete packet references. | Adversarial evidence review | Provenance labels alone do not prove artifact integrity. | should | Adversarial Evidence Reviewer | validation tests | proposed |
+| REQ-013 | Constructor, deserialization, mutation, comparison, and serialization paths shall enforce one consistent set of record invariants. | VAL-004 | Public fields or serde must not bypass trust checks. | must | Evidence Custodian | invalid fixture and mutation tests | accepted |
+| REQ-014 | Run identity shall include all identity-bearing scenario, seed, adapter, and variant inputs without undocumented collisions. | VAL-001/003 | Reproducible evidence requires unambiguous identity. | must | Simulation Auditor | collision tests | accepted |
+| REQ-015 | Comparison shall require a candidate variant, at least one shared metric, valid target configuration, and finite derived deltas. | VAL-004 | Empty or arithmetic-invalid evidence must not look equivalent or successful. | must | Adversarial Evidence Reviewer | boundary and negative tests | accepted |
+| REQ-016 | Bounded random sampling shall either avoid modulo bias or explicitly declare a non-statistical contract. | VAL-003 | Simulation users may interpret repeated samples statistically. | should | Simulation Auditor | distribution/algorithm inspection | accepted |
 
 ## Requirement Quality Checklist
 
@@ -37,4 +41,3 @@ SCENARIUM public Rust contract and first two adoption paths.
 | REQ-D-001: `no_std` support | Current adopters use `std`, maps, and JSON; no measured embedded need. | A named adopter cannot use SCENARIUM with `std`. |
 | REQ-D-002: statistical significance tests | Metric interpretation belongs to consumers until two adopters require the same method. | Two consumers implement equivalent significance logic. |
 | REQ-D-003: runtime orchestration | SCENARIUM records evidence but does not execute scenarios. | A separate runtime owner requests a stable adapter contract. |
-

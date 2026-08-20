@@ -31,6 +31,8 @@ Baseline date: 2026-08-19
 | SPEC-006 | REQ-008 | interface/test | target | A RALLY fixture maps neutral types both directions or documents bounded incompatibilities before migration. | compatibility test | VAL-001 | Runtime Boundary Engineer | high | proposed |
 | SPEC-007 | REQ-009 | interface/test | target | A SIGNALS sidecar maps to SCENARIUM provenance/evidence without importing SIGNALS policy. | round-trip fixture | VAL-002 | Runtime Boundary Engineer | medium | proposed |
 | SPEC-008 | REQ-010 | integration/test | target | A non-game consumer adopts SCENARIUM and records net neutral-code deletion. | integration test/diff | VAL-003 | Consumer Advocate | high | proposed |
+| SPEC-009 | REQ-013/014 | software/interface | target | All construction and decoding paths enforce shared invariants, and run identity includes seed-bearing inputs without supported-seed aliasing. | negative/collision tests | VAL-001/004 | Evidence Custodian | high | proposed |
+| SPEC-010 | REQ-015/016 | software | target | Comparison rejects empty, mis-typed, targetless, or non-finite cases; bounded RNG behavior has an explicit unbiased or non-statistical contract. | boundary/algorithm tests | VAL-003/004 | Simulation Auditor | high | proposed |
 
 ## Public Contracts
 
@@ -45,7 +47,7 @@ Baseline date: 2026-08-19
 
 | Spec IDs | Package / Module | Responsibility | Forbidden Responsibility | Validation Profile |
 |---|---|---|---|---|
-| SPEC-001..005 | `scenarium` crate | Neutral records, validation, comparison, serialization. | Consumer execution, metrics, recommendation, workflow. | L0/L1 |
+| SPEC-001..005/009/010 | `scenarium` crate | Neutral records, validation, comparison, serialization, and deterministic sampling. | Consumer execution, metrics, recommendation, workflow. | L0/L1 |
 | SPEC-006 | RALLY-local adapter/test | RALLY compatibility and migration evidence. | Moving game mechanics into SCENARIUM. | L2 |
 | SPEC-007 | SIGNALS-local or SCENARIUM adapter fixture | Artifact interchange proof. | SIGNALS skills/rubrics/campaign logic. | L2 |
 | SPEC-008 | adopter-owned integration | Real reuse and deletion evidence. | New generic API before repeated need. | L2 |
@@ -79,6 +81,8 @@ Baseline date: 2026-08-19
 | REQ-008 | SPEC-006 | covered | Implementation pending. |
 | REQ-009 | SPEC-007 | covered | Implementation pending. |
 | REQ-010 | SPEC-008 | covered | Adopter selection pending. |
+| REQ-013/014 | SPEC-009 | covered | Implementation pending in WP-001. |
+| REQ-015/016 | SPEC-010 | covered | Implementation pending in WP-001. |
 
 ## Specification Gate
 
@@ -94,4 +98,3 @@ Required before implementation:
 
 Rationale: contract hardening may begin. Consumer migration is blocked until
 the relevant compatibility work package reaches L2.
-
