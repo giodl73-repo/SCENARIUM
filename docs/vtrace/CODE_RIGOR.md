@@ -43,4 +43,5 @@ None accepted.
 | Evidence ID | Constraint IDs | Command / Review | Result | Evidence Pointer |
 |---|---|---|---|---|
 | EVID-CR-001 | CR-005/006 | `cargo fmt --check; cargo clippy --all-targets -- -D warnings; cargo test` and source inspection | current pass | CI and local run |
-| EVID-CR-002 | CR-001 | Current `src/lib.rs` review | risk accepted for foundation only | FIND-004 in `REVIEW.md` |
+| EVID-CR-002 | CR-001 | `src/document.rs`, `error.rs`, `seed.rs`, `model.rs`, `compare.rs`, `evidence.rs` review | pass | FIND-004 fixed in `REVIEW.md` |
+| EVID-CR-003 | CR-009/010 | `cargo test --test contract` | pass | validated decode and finite-delta tests |

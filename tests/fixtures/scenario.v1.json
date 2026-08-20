@@ -1,0 +1,11 @@
+{
+  "schema": "scenarium.v1",
+  "payload": {
+    "id": "checkout",
+    "subject": "Checkout reliability",
+    "seed_label": "seed-1",
+    "attributes": {
+      "environment": "fixture"
+    }
+  }
+}

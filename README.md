@@ -37,7 +37,7 @@ inertia.record_metric(Metric::new(
 )?)?;
 
 let mut candidate =
-    RunRecord::new(&scenario, RunVariant::Candidate("retry-v1".into()), "fixture")?;
+    RunRecord::new(&scenario, RunVariant::candidate("retry-v1")?, "fixture")?;
 candidate.record_metric(Metric::new(
     "completion_rate",
     0.83,
@@ -80,6 +80,18 @@ The controlled implementation goals, requirements, work packages, verification
 plan, and adoption gates live in [`docs/vtrace/`](docs/vtrace/README.md).
 Contract hardening may proceed; RALLY migration, broad generality claims, and
 crates.io publication remain gated by compatibility and adopter evidence.
+
+## Compatibility policy
+
+- The minimum supported Rust version is **1.74**.
+- Rust API changes follow semantic versioning.
+- Persisted JSON uses an explicit `scenarium.v1` document envelope.
+- Supported schema fixtures remain readable across compatible crate releases.
+- Schema field removals, renames, enum reinterpretations, and semantic changes
+  require a new schema version and a documented migration path.
+- The foundation has no optional Cargo features. New dependencies or features
+  require a named capability and adopter; consumer-specific adapters remain in
+  consumer repositories until repeated use proves a shared boundary.
 
 ## Non-goals
 

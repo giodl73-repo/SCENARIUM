@@ -33,4 +33,4 @@ versioned and adversarially tested contract.
 
 ## Status
 
-Pending.
+Complete.

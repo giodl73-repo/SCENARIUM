@@ -16,7 +16,7 @@ decision methods, domain metrics, or orchestration.
 | Pulse | Title | Status | Outcome |
 |------:|-------|--------|---------|
 | 01 | Workspace foundation | complete | Repo skeleton, docs, skills, crate, and tests. |
-| 02 | Contract hardening | pending | Add schema versioning, packet validation, golden fixtures, and internal modules. |
+| 02 | Contract hardening | complete | Added schema versioning, invariant-safe decoding, strict comparison, canonical packets, golden fixtures, and internal modules. |
 | 03 | RALLY compatibility | pending | Prove type and fixture compatibility before migration. |
 | 04 | SIGNALS evidence bridge | pending | Map one append-only JSON sidecar into a packet. |
 | 05 | First non-game consumer | pending | Prove reuse and measure deleted code. |

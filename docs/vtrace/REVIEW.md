@@ -16,27 +16,27 @@ Reviewer lenses: SCENARIUM `.roles/ROLE.md`
 
 | Role | Decision | Finding |
 |---|---|---|
-| Runtime Boundary Engineer | pass_with_risk | Owner boundaries are strong, but adapter placement must remain consumer-local until two compatible adapters exist. |
-| Simulation Auditor | pass_with_risk | Determinism exists, but seed identity collisions and modulo-biased bounded sampling are not yet specified or resolved. |
-| Decision Skeptic | blocked_for_adoption | Empty metric sets can report `Equivalent`, and the candidate input is not required to be a candidate variant. |
-| Evidence Custodian | blocked_for_adoption | Public fields and derived deserialization can create invalid records without constructor checks; packet reference integrity is incomplete. |
-| Consumer Advocate | pass_with_risk | The deletion target is sound, but WP-004 needs a quantitative simplification threshold. |
-| API Stability Reviewer | blocked_for_adoption | Persisted records are unversioned and direct public-field mutation makes invariants difficult to preserve compatibly. |
-| Rust Ecosystem Maintainer | pass_with_risk | One crate is appropriate; the monolithic source, MSRV, and RNG contract need closure before release. |
-| Adversarial Evidence Reviewer | blocked_for_adoption | Target metrics can silently use zero, delta arithmetic can become non-finite, and incomplete comparisons can look trustworthy. |
+| Runtime Boundary Engineer | pass_with_risk | Core ownership is clean; RALLY and SIGNALS adapters remain intentionally unproven. |
+| Simulation Auditor | pass | Run identity includes seed-bearing inputs, integer seeds remain distinct, and bounded sampling uses rejection sampling. |
+| Decision Skeptic | pass | Empty comparisons and baseline-as-candidate inputs fail; all four valid outcomes remain visible. |
+| Evidence Custodian | pass | Public fields are private, decoding validates constructors' invariants, and packet references are closed and canonical. |
+| Consumer Advocate | pass_with_risk | The deletion threshold is quantitative; no adopter evidence exists yet. |
+| API Stability Reviewer | pass | `scenarium.v1`, retained fixtures, MSRV, semver, and compatibility rules are explicit. |
+| Rust Ecosystem Maintainer | pass | One crate remains, code is modular, MSRV is declared, and dependency/feature policy is documented. |
+| Adversarial Evidence Reviewer | pass | Targetless, empty, mis-typed, overflow, invalid-digest, replacement, and missing-reference cases fail structurally. |
 
 ## Role Review Matrix
 
 | Lane | Required | Reviewer / Role | Decision | Evidence / Rationale |
 |---|---|---|---|---|
-| Systems engineering | yes | Runtime Boundary Engineer | pass_with_risk | Owner boundaries are explicit; adapters remain unproven. |
-| Requirements traceability | yes | API Stability Reviewer | pass_with_risk | Requirements/spec/work packages map; schema version is missing. |
-| V&V | yes | Simulation Auditor | pass_with_risk | Foundation tests pass; L2 consumer scenarios remain pending. |
-| Software assurance | yes | Rust Ecosystem Maintainer | pass_with_risk | CI/package foundation exists; MSRV and release policy are pending. |
-| Security/privacy | yes | Adversarial Evidence Reviewer | pass_with_risk | No secrets/runtime access; misleading or incomplete packet cases need tests. |
+| Systems engineering | yes | Runtime Boundary Engineer | pass | Core ownership and forbidden consumer responsibilities are explicit. |
+| Requirements traceability | yes | API Stability Reviewer | pass | Requirements, specifications, work packages, versioned schema, and evidence map completely for WP-001. |
+| V&V | yes | Simulation Auditor | pass | Ten contract tests cover deterministic, accepted, boundary, and adversarial cases required by WP-001. |
+| Software assurance | yes | Rust Ecosystem Maintainer | pass | Modular code, Rust 1.74, clean package policy, and standard Rust gates are established. |
+| Security/privacy | yes | Adversarial Evidence Reviewer | pass | Invariant-safe decoding, digest validation, canonical closure, and strict errors prevent success-shaped invalid evidence. |
 | Safety/mission impact | no | Decision Skeptic | not_required | Crate does not make operational decisions; it must preserve ambiguity. |
 | Source custody | no | Evidence Custodian | not_required | SCENARIUM stores references/provenance, not source corpora. |
-| Configuration/change control | yes | API Stability Reviewer | pass_with_risk | Semver exists; JSON schema change control is not yet explicit. |
+| Configuration/change control | yes | API Stability Reviewer | pass | Semver and `scenarium.v1` change-control rules plus retained fixtures are explicit. |
 
 ## Evidence Inspected
 
@@ -49,20 +49,20 @@ Reviewer lenses: SCENARIUM `.roles/ROLE.md`
 
 | ID | Severity | Finding | Required Action | Disposition |
 |---|---|---|---|---|
-| FIND-001 | major | Persisted SCENARIUM records do not declare a schema version. | Add versioned document envelopes and retained fixtures in WP-001. | open |
-| FIND-002 | major | Packet validation prevents duplicate artifact names but not missing references, invalid digests, or incomplete packet claims. | Add explicit packet validation and adversarial tests in WP-001. | open |
+| FIND-001 | major | Persisted SCENARIUM records do not declare a schema version. | Added `scenarium.v1` envelopes and a retained round-trip fixture. | fixed |
+| FIND-002 | major | Packet validation prevents duplicate artifact names but not missing references, invalid digests, or incomplete packet claims. | Added digest validation, canonical membership, and reference-closure checks. | fixed |
 | FIND-003 | major | RALLY extraction is a design thesis, not compatibility evidence. | Complete WP-002 before migration. | open |
-| FIND-004 | minor | The foundation is implemented in one large `lib.rs`, weakening focused review. | Split internal modules during WP-001 without splitting the crate. | open |
-| FIND-005 | minor | MSRV, feature, and schema compatibility policies are absent. | Complete WP-005 before crates.io publication. | open |
+| FIND-004 | minor | The foundation is implemented in one large `lib.rs`, weakening focused review. | Split into document, error, seed, model, compare, and evidence modules. | fixed |
+| FIND-005 | minor | MSRV, feature, and schema compatibility policies are absent. | Declared Rust 1.74 and documented semver, schema, feature, and dependency policy. | fixed |
 | FIND-006 | note | SIGNALS interchange has a clear boundary but no retained fixture. | Complete WP-003. | open |
-| FIND-007 | major | `RunRecord::run_id` omits `seed_label`, and `Seed::from_u64(0)` aliases seed `1`; distinct evidence runs can share identity or random sequence. | Define collision-resistant run identity and preserve distinct supported seeds in WP-001. | open |
-| FIND-008 | major | `Metric::new(..., MetricDirection::Target)` creates a target metric without a target, and comparison silently substitutes `0.0`. | Make invalid target construction impossible or reject it; remove the silent fallback. | open |
-| FIND-009 | major | `compare_runs` accepts an inertia or named baseline as the candidate and reports an empty shared metric set as `Equivalent`. | Require a candidate variant and at least one comparable metric. | open |
-| FIND-010 | major | Finite input metrics can overflow subtraction and produce a non-finite `beneficial_change`. | Check derived deltas and return a structured arithmetic error. | open |
-| FIND-011 | major | Derived `Deserialize` and public mutable fields bypass constructor invariants for scenarios, variants, metrics, provenance, runs, and packets. | Add validated document decoding and a public `validate` path; decide which fields remain directly mutable before schema v1. | open |
-| FIND-012 | minor | `next_bounded` uses modulo reduction without documenting statistical bias. | Use rejection sampling or explicitly constrain the RNG contract to non-statistical fixture selection. | open |
-| FIND-013 | minor | Packet run/comparison vectors preserve insertion order and can reference comparisons without their runs, so logically equivalent packets may serialize differently or incompletely. | Canonicalize packet membership and validate reference closure. | open |
-| FIND-014 | minor | “Net code deletion” has no counting rule, allowing adoption success to be claimed selectively. | Define deletion as neutral production LOC removed exceeding adopter glue LOC added, excluding fixtures and generated files. | open |
+| FIND-007 | major | `RunRecord::run_id` omits `seed_label`, and `Seed::from_u64(0)` aliases seed `1`; distinct evidence runs can share identity or random sequence. | Run IDs now use injective length-prefixed identity components and integer seeds remain distinct. | fixed |
+| FIND-008 | major | `Metric::new(..., MetricDirection::Target)` creates a target metric without a target, and comparison silently substitutes `0.0`. | Target carries its value in the enum and non-finite targets fail. | fixed |
+| FIND-009 | major | `compare_runs` accepts an inertia or named baseline as the candidate and reports an empty shared metric set as `Equivalent`. | Candidate and non-empty metric requirements now return typed errors. | fixed |
+| FIND-010 | major | Finite input metrics can overflow subtraction and produce a non-finite `beneficial_change`. | Derived deltas are checked and fail with `NonFiniteDerivedMetric`. | fixed |
+| FIND-011 | major | Derived `Deserialize` and public mutable fields bypass constructor invariants for scenarios, variants, metrics, provenance, runs, and packets. | Fields are private and serde decoding uses validated `TryFrom` paths inside versioned documents. | fixed |
+| FIND-012 | minor | `next_bounded` uses modulo reduction without documenting statistical bias. | Bounded sampling now uses rejection sampling. | fixed |
+| FIND-013 | minor | Packet run/comparison vectors preserve insertion order and can reference comparisons without their runs, so logically equivalent packets may serialize differently or incompletely. | BTree collections canonicalize order and comparison insertion requires both runs. | fixed |
+| FIND-014 | minor | “Net code deletion” has no counting rule, allowing adoption success to be claimed selectively. | WP-004 now requires removed neutral production LOC to exceed adopter glue LOC, with exclusions defined. | fixed |
 
 ## Accepted Risks
 
@@ -73,13 +73,13 @@ Reviewer lenses: SCENARIUM `.roles/ROLE.md`
 
 ## Required Follow-Up
 
-1. Execute WP-001 and close FIND-001, FIND-002, FIND-004, and FIND-007 through FIND-013.
-2. Re-run the readiness gate before WP-002 migration.
+1. Complete WP-002 and FIND-003 before RALLY migration.
+2. Complete WP-003 and FIND-006 before claiming SIGNALS interchange.
 3. Do not publish to crates.io before WP-004 and WP-005 closure.
 
 ## Result
 
 The mission, requirements, specification, and package sequence are coherent.
-Core hardening is ready to implement. The current crate is not adoption-ready:
-the blocked-for-adoption findings above must close before WP-002 or WP-003 can
-change an owner system.
+WP-001 core hardening passes all SCENARIUM role lenses. The crate is ready for
+compatibility work, but owner migration and ecosystem release remain gated by
+WP-002 through WP-005.
