@@ -12,7 +12,7 @@ SCENARIUM core, compatibility adapters, and first adoption.
 | REQ-007/011 | inspection/test | golden fixtures, `cargo package`, docs build | Versioned schema and release policy are complete. | pending | EVID-API-001 |
 | REQ-008 | integration | SCENARIUM and RALLY tests with compatibility fixture | Equivalent accepted/failure behavior. | passed at RALLY `6b0bbc6` | EVID-RALLY-001 |
 | REQ-009 | round-trip | SIGNALS fixture adapter test | Provenance and unknown-field posture preserved. | passed with SIGNALS `ea5f090` | EVID-SIGNALS-001 |
-| REQ-010 | integration/analysis | adopter suite and deletion diff | Second adopter passes with net simplification. | pending | EVID-ADOPT-001 |
+| REQ-010 | integration/analysis | adopter suite and deletion diff | Second adopter passes with net simplification. | passed at CERES `71c7ef2` | EVID-ADOPT-001 |
 | REQ-012 | adversarial test | incomplete/digest/duplicate/selective packet cases | Invalid evidence is rejected or reported. | pending | EVID-ADV-001 |
 | CR-001..008 | static analysis/review | fmt, Clippy, tests, source and manifest review | Code-rigor constraints pass or have accepted findings. | partial | EVID-CR-001/002 |
 
@@ -60,4 +60,4 @@ cargo run --manifest-path ..\..\standards-protocols\vtrace\Cargo.toml -- .
 | No schema version in persisted records. | Stored evidence can drift silently. | WP-001 |
 | RALLY consumer migration not yet executed. | Recorded consumers remain pinned to RALLY neutral types. | Consumer-specific migration commits |
 | No production SIGNALS runtime integration. | Interchange is fixture-proven, not a runtime dependency. | Revisit only for a named runtime consumer. |
-| No second direct adopter. | Generality and deletion claim unproven. | WP-004 |
+| Only one non-game adopter. | Generality beyond CERES remains bounded. | Add adopters only for named product need. |
