@@ -15,7 +15,7 @@ SCENARIUM commands or schema fields.
 | WP-002 | Prove RALLY compatibility. | Neutral RALLY evidence maps without moving mechanics. | REQ-008; SPEC-006; IF-003 | RALLY adapter/fixtures, SCENARIUM tests | WP-001 L1 complete. | Accepted and failure fixtures pass; migration/deletion plan reviewed. | L0 yes / L1 yes / L2 yes | complete |
 | WP-003 | Prove SIGNALS artifact interchange. | One sidecar maps losslessly with provenance. | REQ-006/009; SPEC-004/007; IF-004 | SIGNALS fixture/adapter, SCENARIUM tests | WP-001 L1 complete. | Known fields round-trip; unknowns observable; no methodology dependency. | L0 yes / L1 yes / L2 yes | complete |
 | WP-004 | Prove a non-game adopter. | Reuse the crate and delete duplicated neutral code. | REQ-010; SPEC-008 | Selected consumer and SCENARIUM fixture | WP-002 or WP-003 L2 complete; adopter selected. | Deterministic run/comparison passes and net deletion is recorded. | L0 yes / L1 yes / L2 yes | complete |
-| WP-005 | Establish release readiness. | Publish a stable documented crate contract. | REQ-007/011; SPEC-005; IF-001/002 | Cargo metadata, docs, schemas, fixtures | WP-004 L2 complete. | MSRV/semver/features documented; package and compatibility gates pass. | L0 yes / L1 yes / L2 yes | ready |
+| WP-005 | Establish release readiness. | Publish a stable documented crate contract. | REQ-007/011; SPEC-005; IF-001/002 | Cargo metadata, docs, schemas, fixtures | WP-004 L2 complete. | MSRV/semver/features documented; package and compatibility gates pass. | L0 yes / L1 yes / L2 yes | complete |
 
 ## WP-001: Core contract hardening
 

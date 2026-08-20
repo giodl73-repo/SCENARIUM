@@ -9,12 +9,12 @@ SCENARIUM core, compatibility adapters, and first adoption.
 | Requirement IDs | Method | Command / Inspection | Expected Evidence | Result | Evidence Pointer |
 |---|---|---|---|---|---|
 | REQ-001..006 | test/analysis | `cargo test` | Determinism, comparison, failure, and packet tests pass. | current pass | EVID-001..006 |
-| REQ-007/011 | inspection/test | golden fixtures, `cargo package`, docs build | Versioned schema and release policy are complete. | pending | EVID-API-001 |
+| REQ-007/011 | inspection/test | golden fixtures, `cargo package`, docs build, Rust 1.74 lane | Versioned schema and release policy are complete. | passed | EVID-API-001/EVID-RELEASE-001 |
 | REQ-008 | integration | SCENARIUM and RALLY tests with compatibility fixture | Equivalent accepted/failure behavior. | passed at RALLY `6b0bbc6` | EVID-RALLY-001 |
 | REQ-009 | round-trip | SIGNALS fixture adapter test | Provenance and unknown-field posture preserved. | passed with SIGNALS `ea5f090` | EVID-SIGNALS-001 |
 | REQ-010 | integration/analysis | adopter suite and deletion diff | Second adopter passes with net simplification. | passed at CERES `71c7ef2` | EVID-ADOPT-001 |
-| REQ-012 | adversarial test | incomplete/digest/duplicate/selective packet cases | Invalid evidence is rejected or reported. | pending | EVID-ADV-001 |
-| CR-001..008 | static analysis/review | fmt, Clippy, tests, source and manifest review | Code-rigor constraints pass or have accepted findings. | partial | EVID-CR-001/002 |
+| REQ-012 | adversarial test | incomplete/digest/duplicate/selective packet cases | Invalid evidence is rejected or reported. | passed | EVID-ADV-001 |
+| CR-001..010 | static analysis/review | fmt, Clippy, tests, source and manifest review | Code-rigor constraints pass or have accepted findings. | passed | EVID-ADV-001/EVID-RELEASE-001 |
 
 ## Commands
 
@@ -37,9 +37,9 @@ cargo run --manifest-path ..\..\standards-protocols\vtrace\Cargo.toml -- .
 
 | Level | Purpose | Commands / Evidence | Result |
 |---|---|---|---|
-| L0 | Active package sanity. | fmt plus focused tests | pending per package |
-| L1 | Full SCENARIUM confidence. | all standard commands and package check | current foundation pass |
-| L2 | Migration or release readiness. | consumer suites, fixtures, role gate, deletion evidence | pending |
+| L0 | Active package sanity. | fmt plus focused tests | passed |
+| L1 | Full SCENARIUM confidence. | all standard commands and package check | passed |
+| L2 | Migration or release readiness. | consumer suites, fixtures, role gate, deletion evidence | passed |
 
 ## Evidence Ledger
 

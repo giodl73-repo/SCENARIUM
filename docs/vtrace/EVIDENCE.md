@@ -20,7 +20,7 @@ SCENARIUM foundation, contract hardening, adoption, and release readiness.
 | EVID-RALLY-001 | integration | RALLY commit `6b0bbc6`; `cargo test --test scenarium_compat`; `cargo test` | Accepted and failure behavior is equivalent; stricter incompatibilities are explicit; game mechanics remain local; deletion plan exists. | Three compatibility tests and the full RALLY suite pass. The ledger names seven duplicate types and source ranges; empty and non-finite comparisons fail structurally in SCENARIUM. | passed |
 | EVID-SIGNALS-001 | fixture/review | SIGNALS commit `ea5f090`; `cargo test --test signals_interchange`; `docs/signals-interchange.md` | Provenance survives, unknown fields remain visible, and methodology remains outside SCENARIUM. | Real skill/topic/item/date/version/input provenance and artifact identity round-trip; extension fields survive; unsupported schema fails structurally. | passed |
 | EVID-ADOPT-001 | integration/analysis | CERES `71c7ef2`; `cargo test`; repeated real smithing comparison; `docs/scenarium-adoption.md` | Non-game adoption passes with deterministic comparison and net neutral-code deletion. | Repeated comparison and packet bytes match; packets use `scenarium.v1`; CERES removes its duplicate evidence family; production Rust is 122 added/123 removed. | passed |
-| EVID-RELEASE-001 | package/review | WP-005 `cargo package`, docs, MSRV, semver, and schema checks | Release contract is explicit and package-ready. | Evidence collection deferred until WP-004 L2 closure. | deferred |
+| EVID-RELEASE-001 | package/review | `cargo package --locked`; `cargo doc --locked --no-deps`; `rustup run 1.74.0 cargo test --locked`; `docs/release-readiness.md` | Release contract is explicit and package-ready. | Stable and Rust 1.74 gates pass; lock format is Cargo 1.74-compatible; metadata, policies, and retained fixtures are packaged. | passed |
 
 ## Claim discipline
 
@@ -29,5 +29,5 @@ SCENARIUM foundation, contract hardening, adoption, and release readiness.
   the migration ledger.
 - Generality is supported by RALLY, SIGNALS, and one non-game CERES adoption;
   broader ecosystem claims remain release-gated.
-- No stable schema or crates.io readiness claim is valid before EVID-API-001
-  and EVID-RELEASE-001.
+- Package readiness is supported by EVID-API-001 and EVID-RELEASE-001.
+  crates.io publication remains a separate owner action.

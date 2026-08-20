@@ -59,7 +59,7 @@ Baseline date: 2026-08-19
 | SPEC-NF-001 | SPEC-001..005 | Determinism | Identical inputs produce byte-identical JSON. | repeated golden test | proposed |
 | SPEC-NF-002 | SPEC-001..005 | Dependency restraint | No dependency added without a named capability and consumer. | manifest review | accepted |
 | SPEC-NF-003 | SPEC-002/004 | Failure visibility | Invalid or incomplete evidence returns structured error; no success fallback. | negative tests | accepted |
-| SPEC-NF-004 | SPEC-005 | Compatibility | Supported schema fixtures remain readable across minor releases. | compatibility test | proposed |
+| SPEC-NF-004 | SPEC-005 | Compatibility | Supported schema fixtures remain readable across minor releases. | compatibility test | verified |
 
 ## Assumptions And Unknowns
 
@@ -67,7 +67,7 @@ Baseline date: 2026-08-19
 |---|---|---|---|---|
 | SPEC-UNK-001 | First non-game adopter selection. | Blocks L2 adoption proof. | Decide during WP-004; prefer CERES or an enterprise simulation with repeated shapes. | Consumer Advocate |
 | SPEC-UNK-002 | Whether adapters belong in SCENARIUM or consumers. | Could expand scope prematurely. | Keep consumer-local through first two proofs. | Runtime Boundary Engineer |
-| SPEC-UNK-003 | MSRV value. | Blocks release policy. | Measure current dependency MSRV in WP-005. | Rust Ecosystem Maintainer |
+| SPEC-UNK-003 | MSRV value. | Resolved at Rust 1.74 with locked full-suite proof. | Re-evaluate only when a dependency or language feature requires a higher floor. | Rust Ecosystem Maintainer |
 
 ## Requirement-To-Spec Coverage
 
