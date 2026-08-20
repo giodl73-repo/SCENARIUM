@@ -74,6 +74,13 @@ From SIGNALS:
 - negative and falsifying results are valuable evidence;
 - independent runs remain self-contained and can be synthesized intentionally.
 
+## Implementation governance
+
+The controlled implementation goals, requirements, work packages, verification
+plan, and adoption gates live in [`docs/vtrace/`](docs/vtrace/README.md).
+Contract hardening may proceed; RALLY migration, broad generality claims, and
+crates.io publication remain gated by compatibility and adopter evidence.
+
 ## Non-goals
 
 - No game, business-domain, or feature-scoring policy.
@@ -85,4 +92,3 @@ From SIGNALS:
 ## License
 
 [MIT](LICENSE) - Copyright (c) 2026 Gio Della-Libera.
-
