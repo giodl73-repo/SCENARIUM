@@ -68,18 +68,18 @@ Reviewer lenses: SCENARIUM `.roles/ROLE.md`
 
 | Risk | Rationale | Owner | Revisit Trigger |
 |---|---|---|---|
-| One published crate. | RALLY, SIGNALS, and CERES evidence does not justify package proliferation. | Rust Ecosystem Maintainer | A second independently versioned capability with two adopters. |
+| One package. | RALLY, SIGNALS, and CERES evidence does not justify package proliferation. | Rust Ecosystem Maintainer | A second independently versioned capability with two adopters. |
 | `std` and serde dependency. | Current named users require JSON and allocated records. | Rust Ecosystem Maintainer | A blocked named `no_std` adopter. |
 
 ## Required Follow-Up
 
 1. Migrate recorded RALLY consumers individually before deleting neutral types.
 2. Migrate additional RALLY consumers only through their own compatibility gates.
-3. Keep crates.io publication as a separate explicit owner action.
+3. Keep registry publication prohibited; consumers use immutable source pins.
 
 ## Result
 
 The mission, requirements, specification, and package sequence are coherent.
 WP-001 through WP-005 pass their required role lenses. SCENARIUM is package-ready.
-Owner migration beyond CERES and crates.io publication remain separate explicit
-decisions.
+Owner migration beyond CERES remains a separate explicit decision. Registry
+publication is prohibited by portfolio policy.

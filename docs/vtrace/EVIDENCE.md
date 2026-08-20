@@ -30,4 +30,4 @@ SCENARIUM foundation, contract hardening, adoption, and release readiness.
 - Generality is supported by RALLY, SIGNALS, and one non-game CERES adoption;
   broader ecosystem claims remain release-gated.
 - Package readiness is supported by EVID-API-001 and EVID-RELEASE-001.
-  crates.io publication remains a separate owner action.
+  Registry publication is prohibited by portfolio policy.

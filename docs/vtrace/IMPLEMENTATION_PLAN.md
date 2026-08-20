@@ -96,7 +96,7 @@ Pulse mapping:
 | RISK-002 | SIGNALS methodology leaks into a low-level crate. | Adapter-only boundary and runtime review. | Runtime Boundary Engineer |
 | RISK-003 | Serialized evidence changes without migration. | Schema version, golden fixtures, API stability review. | API Stability Reviewer |
 | RISK-004 | Selective metrics create misleading success. | Complete-set comparison and adversarial tests. | Adversarial Evidence Reviewer |
-| RISK-005 | Premature crate/module proliferation. | Keep one published crate through two adopters. | Rust Ecosystem Maintainer |
+| RISK-005 | Premature crate/module proliferation. | Keep one source-consumed package through two adopters. | Rust Ecosystem Maintainer |
 
 ## Implementation Readiness Decision
 
@@ -104,4 +104,3 @@ Decision: pass_with_risk
 
 Rationale: WP-001 is ready. WP-002 through WP-005 remain gated by the preceding
 package and their L2 evidence.
-

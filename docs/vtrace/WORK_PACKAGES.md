@@ -117,7 +117,7 @@ Exit criteria:
 - Semver and JSON schema compatibility policy documented.
 - `cargo package` and docs build cleanly.
 - Supported schema fixtures are retained.
-- crates.io publication remains a separate explicit owner action.
+- Registry publication remains prohibited by portfolio policy.
 
 Review gate: API Stability Reviewer, Rust Ecosystem Maintainer, Evidence Custodian.
 

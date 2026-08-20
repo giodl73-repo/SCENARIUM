@@ -82,8 +82,8 @@ From SIGNALS:
 The controlled implementation goals, requirements, work packages, verification
 plan, and adoption gates live in [`docs/vtrace/`](docs/vtrace/README.md).
 The package-readiness evidence is summarized in
-[`docs/release-readiness.md`](docs/release-readiness.md). crates.io publication
-has not been performed and remains a separate explicit owner action.
+[`docs/release-readiness.md`](docs/release-readiness.md). Registry publication
+is prohibited by portfolio policy; SCENARIUM remains source-consumed.
 
 ## Compatibility policy
 

@@ -27,7 +27,7 @@ Language/toolchain: stable Rust 2021, rustfmt, Clippy, cargo test, cargo package
 
 | Area | Rule | Rationale |
 |---|---|---|
-| Module layout | Split the current monolithic `lib.rs` during WP-001 without splitting the published crate. | Improves reviewability without premature package boundaries. |
+| Module layout | Split the current monolithic `lib.rs` during WP-001 without splitting the package. | Improves reviewability without premature package boundaries. |
 | Errors | Keep a typed error enum; add context without string matching as a contract. | Consumers need structured failures. |
 | Serialization | Use ordered collections and golden fixtures. | Identical inputs must remain byte-stable. |
 | Numeric values | Reject NaN and infinity; document float comparison semantics. | Non-finite evidence is not portable or trustworthy. |

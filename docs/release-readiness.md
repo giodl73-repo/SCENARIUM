@@ -1,7 +1,8 @@
 # Release readiness
 
-SCENARIUM is package-ready at `0.1.0`. Publication to crates.io has not been
-performed and remains a separate explicit owner action.
+SCENARIUM is package-ready at `0.1.0` for reproducible source consumption and
+package inspection. Portfolio policy prohibits registering or publishing
+crates on crates.io.
 
 ## Compatibility contract
 
@@ -40,6 +41,6 @@ Release readiness is supported by:
 - real SIGNALS sidecar interchange;
 - direct CERES adoption with measured production-code deletion.
 
-This evidence supports the current neutral contract. It does not authorize
-crates.io publication, automatic RALLY consumer migration, or new domain policy
+This evidence supports the current neutral contract. It does not permit
+registry publication, automatic RALLY consumer migration, or new domain policy
 inside SCENARIUM.
