@@ -1,7 +1,7 @@
 use scenarium::{
-    compare_runs, decode_document, ArtifactRef, ComparisonStatus, Error, EvidencePacket, Finding,
-    Metric, MetricDirection, Provenance, RunRecord, RunStatus, RunVariant, Scenario, Seed,
-    Severity, SCHEMA_VERSION,
+    compare_metric_sets, compare_runs, decode_document, ArtifactRef, ComparisonStatus, Error,
+    EvidencePacket, Finding, Metric, MetricDirection, Provenance, RunRecord, RunStatus, RunVariant,
+    Scenario, Seed, Severity, SCHEMA_VERSION,
 };
 
 fn run_pair(seed_label: &str) -> (RunRecord, RunRecord) {
@@ -244,4 +244,34 @@ fn invalid_digest_is_rejected() {
             .with_digest("sha256:ABC"),
         Err(Error::InvalidDigest(_))
     ));
+}
+
+#[test]
+fn repeated_adopter_construction_seams_preserve_packet_closure() {
+    let scenario = Scenario::new("checkout", "Checkout reliability", "seed").unwrap();
+    let (baseline, candidate, comparison) = compare_metric_sets(
+        &scenario,
+        "fixture",
+        RunVariant::Inertia,
+        RunVariant::candidate("retry").unwrap(),
+        [Metric::new("completion", 0.5, MetricDirection::HigherIsBetter).unwrap()],
+        [Metric::new("completion", 0.8, MetricDirection::HigherIsBetter).unwrap()],
+    )
+    .unwrap();
+    let provenance = Provenance::new("fixture", "1", "checkout").unwrap();
+    let mut packet = EvidencePacket::from_comparison(
+        "packet",
+        "Checkout",
+        provenance,
+        &baseline,
+        &candidate,
+        &comparison,
+    )
+    .unwrap();
+    packet
+        .add_artifact_path("comparison", "comparison.json", "application/json")
+        .unwrap();
+
+    assert_eq!(comparison.status(), ComparisonStatus::Improved);
+    assert!(packet.to_json().unwrap().contains("comparison.json"));
 }

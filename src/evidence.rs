@@ -126,6 +126,21 @@ impl EvidencePacket {
         })
     }
 
+    pub fn from_comparison(
+        packet_id: &str,
+        subject: &str,
+        provenance: Provenance,
+        baseline: &RunRecord,
+        candidate: &RunRecord,
+        comparison: &ComparisonReport,
+    ) -> Result<Self, Error> {
+        let mut packet = Self::new(packet_id, subject, provenance)?;
+        packet.include_run(baseline);
+        packet.include_run(candidate);
+        packet.include_comparison(comparison)?;
+        Ok(packet)
+    }
+
     pub fn include_run(&mut self, run: &RunRecord) {
         self.run_ids.insert(run.run_id().to_string());
     }
@@ -173,6 +188,15 @@ impl EvidencePacket {
         }
         self.artifacts.insert(name.to_string(), artifact);
         Ok(())
+    }
+
+    pub fn add_artifact_path(
+        &mut self,
+        name: &str,
+        path: &str,
+        media_type: &str,
+    ) -> Result<(), Error> {
+        self.add_artifact(name, ArtifactRef::new(path, media_type)?)
     }
 
     pub fn validate(&self) -> Result<(), Error> {

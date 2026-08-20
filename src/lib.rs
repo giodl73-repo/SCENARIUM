@@ -5,7 +5,9 @@ mod evidence;
 mod model;
 mod seed;
 
-pub use compare::{compare_runs, ComparisonReport, ComparisonStatus, MetricDelta};
+pub use compare::{
+    compare_metric_sets, compare_runs, ComparisonReport, ComparisonStatus, MetricDelta,
+};
 pub use document::{decode_document, encode_document, SCHEMA_VERSION};
 pub use error::Error;
 pub use evidence::{ArtifactRef, EvidencePacket};

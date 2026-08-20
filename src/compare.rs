@@ -220,6 +220,26 @@ pub fn compare_runs(
     })
 }
 
+pub fn compare_metric_sets(
+    scenario: &crate::Scenario,
+    adapter: &str,
+    baseline_variant: crate::RunVariant,
+    candidate_variant: crate::RunVariant,
+    baseline_metrics: impl IntoIterator<Item = crate::Metric>,
+    candidate_metrics: impl IntoIterator<Item = crate::Metric>,
+) -> Result<(RunRecord, RunRecord, ComparisonReport), Error> {
+    let mut baseline = RunRecord::new(scenario, baseline_variant, adapter)?;
+    for metric in baseline_metrics {
+        baseline.record_metric(metric)?;
+    }
+    let mut candidate = RunRecord::new(scenario, candidate_variant, adapter)?;
+    for metric in candidate_metrics {
+        candidate.record_metric(metric)?;
+    }
+    let comparison = compare_runs(&baseline, &candidate)?;
+    Ok((baseline, candidate, comparison))
+}
+
 fn comparison_id(baseline_run_id: &str, candidate_run_id: &str) -> String {
     format!("{baseline_run_id}..{candidate_run_id}")
 }
