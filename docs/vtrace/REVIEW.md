@@ -76,10 +76,13 @@ Reviewer lenses: SCENARIUM `.roles/ROLE.md`
 1. Migrate recorded RALLY consumers individually before deleting neutral types.
 2. Migrate additional RALLY consumers only through their own compatibility gates.
 3. Keep registry publication prohibited; consumers use immutable source pins.
+4. Do not add RUNE descriptors from the TERRAIN projection; it exposed no
+   repeated neutral seam with measurable deletion.
 
 ## Result
 
 The mission, requirements, specification, and package sequence are coherent.
-WP-001 through WP-005 pass their required role lenses. SCENARIUM is package-ready.
-Owner migration beyond CERES remains a separate explicit decision. Registry
-publication is prohibited by portfolio policy.
+WP-001 through WP-005 pass their required role lenses. WP-006 closes as
+`stop-value-exhausted`: TERRAIN proves an additive projection but disproves its
+deletion thesis. SCENARIUM is package-ready and should not expand from that
+result. Registry publication is prohibited by portfolio policy.

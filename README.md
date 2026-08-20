@@ -77,6 +77,13 @@ From SIGNALS:
 - negative and falsifying results are valuable evidence;
 - independent runs remain self-contained and can be synthesized intentionally.
 
+TERRAIN provides a second direct non-game pressure test. It consumes the
+existing run, comparison, finding, provenance, and packet contracts for one
+real territory-plan scenario while retaining every territory-specific report.
+The audit found no duplicate neutral type family to delete, so the result is a
+bounded additive projection and an explicit stop gate rather than a reason to
+expand SCENARIUM.
+
 ## Implementation governance
 
 The controlled implementation goals, requirements, work packages, verification

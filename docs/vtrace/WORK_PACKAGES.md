@@ -121,6 +121,26 @@ Exit criteria:
 
 Review gate: API Stability Reviewer, Rust Ecosystem Maintainer, Evidence Custodian.
 
+## WP-006: TERRAIN adopter pressure test
+
+Exit criteria:
+
+- One retained TERRAIN baseline/candidate scenario emits `scenarium.v1` runs,
+  comparison, findings, provenance, and evidence packet.
+- TERRAIN geography, balancing, movement, capacity, edge, visual, and report
+  policy remain local.
+- Existing packet artifacts remain compatible.
+- The deletion thesis is measured rather than assumed.
+- If no duplicate neutral type family exists, stop without expanding
+  SCENARIUM or adding RUNE descriptors.
+
+Outcome: closed with `stop-value-exhausted`. TERRAIN commit `29af76f` emits
+deterministic additive evidence, but its existing comparison types are domain
+reports and cannot be deleted without violating ownership.
+
+Review gate: Territory Planner, Operations Buyer, Kernel Boundary Engineer,
+Report Contract Editor.
+
 ## Orphan Check
 
 - [x] Every accepted requirement is assigned or deferred.
