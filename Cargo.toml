@@ -1,0 +1,15 @@
+[package]
+name = "scenarium"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Deterministic scenario runs, inertia-first comparisons, and evidence packets."
+repository = "https://github.com/giodl73-repo/SCENARIUM"
+readme = "README.md"
+keywords = ["simulation", "evaluation", "evidence", "scenario", "replay"]
+categories = ["development-tools::testing", "simulation"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
