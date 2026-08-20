@@ -152,6 +152,10 @@ impl ComparisonReport {
         }
     }
 
+    pub fn improved_count(&self) -> usize {
+        self.deltas.iter().filter(|delta| delta.improved()).count()
+    }
+
     pub fn to_json(&self) -> Result<String, Error> {
         encode_document(self)
     }

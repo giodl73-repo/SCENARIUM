@@ -273,5 +273,6 @@ fn repeated_adopter_construction_seams_preserve_packet_closure() {
         .unwrap();
 
     assert_eq!(comparison.status(), ComparisonStatus::Improved);
+    assert_eq!(comparison.improved_count(), 1);
     assert!(packet.to_json().unwrap().contains("comparison.json"));
 }
