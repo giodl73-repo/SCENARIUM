@@ -17,7 +17,7 @@ SCENARIUM foundation, contract hardening, adoption, and release readiness.
 | EVID-CI-001 | CI | GitHub Actions run `32330439679` | fmt, Clippy, and tests pass. | Workflow completed successfully. | passed |
 | EVID-API-001 | fixture/review | `tests/fixtures/scenario.v1.json`; `cargo test retained_v1_fixture_round_trips_canonically`; README compatibility policy | Versioned schema and compatibility policy exist. | `scenarium.v1`, retained fixture, Rust 1.74, semver, feature, and dependency rules are present. | passed |
 | EVID-ADV-001 | test/review | `cargo test --test contract`; `docs/vtrace/REVIEW.md` | Incomplete or misleading evidence is rejected or reported. | Ten contract tests cover identity, RNG, comparison states/failures, validated decoding, findings, digests, append-only behavior, and packet closure. | passed |
-| EVID-RALLY-001 | integration | WP-002 RALLY compatibility fixture and dual-repo test commands | Accepted and failure behavior is equivalent; deletion plan exists. | Evidence collection deferred until WP-002 entry criteria pass. | deferred |
+| EVID-RALLY-001 | integration | RALLY commit `6b0bbc6`; `cargo test --test scenarium_compat`; `cargo test` | Accepted and failure behavior is equivalent; stricter incompatibilities are explicit; game mechanics remain local; deletion plan exists. | Three compatibility tests and the full RALLY suite pass. The ledger names seven duplicate types and source ranges; empty and non-finite comparisons fail structurally in SCENARIUM. | passed |
 | EVID-SIGNALS-001 | fixture/review | WP-003 SIGNALS sidecar round-trip | Provenance survives and methodology remains outside SCENARIUM. | Evidence collection deferred until WP-003 entry criteria pass. | deferred |
 | EVID-ADOPT-001 | integration/analysis | WP-004 adopter tests and before/after diff | Non-game adoption passes with net neutral-code deletion. | Evidence collection deferred until an adopter is selected. | deferred |
 | EVID-RELEASE-001 | package/review | WP-005 `cargo package`, docs, MSRV, semver, and schema checks | Release contract is explicit and package-ready. | Evidence collection deferred until WP-004 L2 closure. | deferred |
@@ -25,7 +25,8 @@ SCENARIUM foundation, contract hardening, adoption, and release readiness.
 ## Claim discipline
 
 - Foundation evidence supports a crate foundation, not ecosystem maturity.
-- No RALLY migration claim is valid before EVID-RALLY-001.
+- RALLY compatibility is proven; neutral-type deletion remains consumer-gated by
+  the migration ledger.
 - No generality claim is valid before EVID-ADOPT-001.
 - No stable schema or crates.io readiness claim is valid before EVID-API-001
   and EVID-RELEASE-001.
