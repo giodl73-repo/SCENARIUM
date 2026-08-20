@@ -49,6 +49,18 @@ impl ArtifactRef {
         self.digest = Some(digest.to_string());
         Ok(self)
     }
+
+    pub fn path(&self) -> &str {
+        &self.path
+    }
+
+    pub fn media_type(&self) -> &str {
+        &self.media_type
+    }
+
+    pub fn digest(&self) -> Option<&str> {
+        self.digest.as_deref()
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
@@ -116,6 +128,22 @@ impl EvidencePacket {
 
     pub fn include_run(&mut self, run: &RunRecord) {
         self.run_ids.insert(run.run_id().to_string());
+    }
+
+    pub fn packet_id(&self) -> &str {
+        &self.packet_id
+    }
+
+    pub fn subject(&self) -> &str {
+        &self.subject
+    }
+
+    pub fn artifacts(&self) -> &BTreeMap<String, ArtifactRef> {
+        &self.artifacts
+    }
+
+    pub fn provenance(&self) -> &Provenance {
+        &self.provenance
     }
 
     pub fn include_comparison(&mut self, comparison: &ComparisonReport) -> Result<(), Error> {

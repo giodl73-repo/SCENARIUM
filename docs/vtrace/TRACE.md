@@ -7,10 +7,10 @@
 | REQ-003 | Complete trustworthy comparison | SPEC-002/NF-003 | CR-002/003/004 | WP-001 | comparison module | negative/table tests | VAL-001/003 | EVID-003 | verified |
 | REQ-004 | Preserve outcome ambiguity | SPEC-002 | CR-002 | WP-001 | comparison statuses | table tests | reviewer scenario | EVID-004 | verified |
 | REQ-005 | Structured findings | SPEC-003 | CR-003/007 | WP-001 | findings/status module | serialization tests | evidence review | EVID-005 | verified |
-| REQ-006 | Provenance and append-only packets | SPEC-004 | CR-003/004/007 | WP-001/WP-003 | packet/provenance modules | negative/round-trip tests | VAL-002 | EVID-006 | verified_core |
+| REQ-006 | Provenance and append-only packets | SPEC-004 | CR-003/004/007 | WP-001/WP-003 | packet/provenance modules | negative/round-trip tests | VAL-002 | EVID-006/EVID-SIGNALS-001 | verified |
 | REQ-007 | Versioned public records | SPEC-005/IF-002 | CR-004/007 | WP-001/WP-005 | document envelopes/fixtures | golden compatibility tests | release review | EVID-API-001 | verified |
 | REQ-008 | Safe RALLY extraction | SPEC-006/IF-003 | CR-002/004 | WP-002 | RALLY adapter/fixtures | dual-repo tests | VAL-001 | EVID-RALLY-001 | verified |
-| REQ-009 | SIGNALS interchange | SPEC-007/IF-004 | CR-003/007 | WP-003 | sidecar adapter/fixture | round-trip test | VAL-002 | EVID-SIGNALS-001 | proposed |
+| REQ-009 | SIGNALS interchange | SPEC-007/IF-004 | CR-003/007 | WP-003 | sidecar adapter/fixture | round-trip test | VAL-002 | EVID-SIGNALS-001 | verified |
 | REQ-010 | Non-game proof and deletion | SPEC-008 | CR-008 | WP-004 | adopter integration | integration/diff analysis | VAL-003 | EVID-ADOPT-001 | proposed |
 | REQ-011 | Ecosystem maintenance contract | SPEC-005/IF-001 | CR-005/007/008 | WP-005 | Cargo/docs/fixtures | package/docs inspection | release review | EVID-API-001 | verified_policy |
 | REQ-012 | Packet integrity | SPEC-004 | CR-003/004 | WP-001 | packet validation | adversarial tests | VAL-002/003 | EVID-ADV-001 | verified |

@@ -329,6 +329,14 @@ impl Provenance {
     pub fn producer(&self) -> &str {
         &self.producer
     }
+
+    pub fn producer_version(&self) -> &str {
+        &self.producer_version
+    }
+
+    pub fn input_id(&self) -> &str {
+        &self.input_id
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]

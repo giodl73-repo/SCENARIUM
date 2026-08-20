@@ -16,10 +16,10 @@ Reviewer lenses: SCENARIUM `.roles/ROLE.md`
 
 | Role | Decision | Finding |
 |---|---|---|
-| Runtime Boundary Engineer | pass_with_risk | RALLY compatibility is proven without moving mechanics; SIGNALS interchange remains unproven. |
+| Runtime Boundary Engineer | pass | RALLY compatibility and SIGNALS interchange are proven without moving owner mechanics or methodology. |
 | Simulation Auditor | pass | Run identity includes seed-bearing inputs, integer seeds remain distinct, and bounded sampling uses rejection sampling. |
 | Decision Skeptic | pass | Empty comparisons and baseline-as-candidate inputs fail; all four valid outcomes remain visible. |
-| Evidence Custodian | pass | Public fields are private, decoding validates constructors' invariants, and packet references are closed and canonical. |
+| Evidence Custodian | pass | Packet closure is canonical and real SIGNALS provenance plus unknown extension fields round-trip losslessly. |
 | Consumer Advocate | pass_with_risk | RALLY has an exact consumer-gated deletion ledger; no non-game deletion evidence exists yet. |
 | API Stability Reviewer | pass | `scenarium.v1`, retained fixtures, MSRV, semver, and compatibility rules are explicit. |
 | Rust Ecosystem Maintainer | pass | One crate remains, code is modular, MSRV is declared, and dependency/feature policy is documented. |
@@ -30,12 +30,12 @@ Reviewer lenses: SCENARIUM `.roles/ROLE.md`
 | Lane | Required | Reviewer / Role | Decision | Evidence / Rationale |
 |---|---|---|---|---|
 | Systems engineering | yes | Runtime Boundary Engineer | pass | Core ownership is explicit and the RALLY adapter leaves dice, turns, board state, events, and policy in RALLY. |
-| Requirements traceability | yes | API Stability Reviewer | pass | WP-001 and WP-002 requirements, specifications, fixtures, commits, and evidence pointers map completely. |
-| V&V | yes | Simulation Auditor | pass | Ten core contract tests plus three RALLY compatibility tests cover accepted, failure, comparison, and boundary behavior. |
+| Requirements traceability | yes | API Stability Reviewer | pass | WP-001 through WP-003 requirements, specifications, fixtures, commits, and evidence pointers map completely. |
+| V&V | yes | Simulation Auditor | pass | Core, RALLY, and SIGNALS tests cover accepted, failure, comparison, provenance, schema, and unknown-field behavior. |
 | Software assurance | yes | Rust Ecosystem Maintainer | pass | Modular code, Rust 1.74, clean package policy, and standard Rust gates are established. |
 | Security/privacy | yes | Adversarial Evidence Reviewer | pass | Invariant-safe decoding, digest validation, canonical closure, and strict errors prevent success-shaped invalid evidence. |
 | Safety/mission impact | no | Decision Skeptic | not_required | Crate does not make operational decisions; it must preserve ambiguity. |
-| Source custody | no | Evidence Custodian | not_required | SCENARIUM stores references/provenance, not source corpora. |
+| Source custody | yes | Evidence Custodian | pass | The retained SIGNALS sidecar identifies its source artifact and commit without copying methodology or source corpora into records. |
 | Configuration/change control | yes | API Stability Reviewer | pass | Semver and `scenarium.v1` change-control rules plus retained fixtures are explicit. |
 
 ## Evidence Inspected
@@ -54,7 +54,7 @@ Reviewer lenses: SCENARIUM `.roles/ROLE.md`
 | FIND-003 | major | RALLY extraction is a design thesis, not compatibility evidence. | RALLY commit `6b0bbc6` adds retained accepted/failure mappings, explicit stricter failures, full-suite proof, and an exact consumer-gated deletion ledger. | fixed |
 | FIND-004 | minor | The foundation is implemented in one large `lib.rs`, weakening focused review. | Split into document, error, seed, model, compare, and evidence modules. | fixed |
 | FIND-005 | minor | MSRV, feature, and schema compatibility policies are absent. | Declared Rust 1.74 and documented semver, schema, feature, and dependency policy. | fixed |
-| FIND-006 | note | SIGNALS interchange has a clear boundary but no retained fixture. | Complete WP-003. | open |
+| FIND-006 | note | SIGNALS interchange has a clear boundary but no retained fixture. | SIGNALS `ea5f090` retains a real sidecar; SCENARIUM round-trips provenance, artifact identity, and unknown extensions in three tests. | fixed |
 | FIND-007 | major | `RunRecord::run_id` omits `seed_label`, and `Seed::from_u64(0)` aliases seed `1`; distinct evidence runs can share identity or random sequence. | Run IDs now use injective length-prefixed identity components and integer seeds remain distinct. | fixed |
 | FIND-008 | major | `Metric::new(..., MetricDirection::Target)` creates a target metric without a target, and comparison silently substitutes `0.0`. | Target carries its value in the enum and non-finite targets fail. | fixed |
 | FIND-009 | major | `compare_runs` accepts an inertia or named baseline as the candidate and reports an empty shared metric set as `Equivalent`. | Candidate and non-empty metric requirements now return typed errors. | fixed |
@@ -74,12 +74,12 @@ Reviewer lenses: SCENARIUM `.roles/ROLE.md`
 ## Required Follow-Up
 
 1. Migrate recorded RALLY consumers individually before deleting neutral types.
-2. Complete WP-003 and FIND-006 before claiming SIGNALS interchange.
+2. Complete WP-004 with a non-game adopter and net production-code deletion.
 3. Do not publish to crates.io before WP-004 and WP-005 closure.
 
 ## Result
 
 The mission, requirements, specification, and package sequence are coherent.
-WP-001 core hardening and WP-002 RALLY compatibility pass their required role
-lenses. SIGNALS interchange, non-game simplification, owner migration, and
-ecosystem release remain gated.
+WP-001 core hardening, WP-002 RALLY compatibility, and WP-003 SIGNALS
+interchange pass their required role lenses. Non-game simplification, owner
+migration, and ecosystem release remain gated.

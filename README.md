@@ -14,6 +14,9 @@ RALLY continues to own game and playtest mechanics. SIGNALS continues to own
 feature-decision workflows, techniques, and review policy. SCENARIUM owns only
 the reusable typed contracts between a scenario runner and its evidence.
 
+The retained [SIGNALS interchange proof](docs/signals-interchange.md) maps real
+artifact provenance without importing SIGNALS methodology.
+
 ## First command
 
 ```powershell

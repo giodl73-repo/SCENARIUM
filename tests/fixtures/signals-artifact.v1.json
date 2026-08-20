@@ -1,0 +1,14 @@
+{
+  "schema": "signals.artifact.v1",
+  "artifact_id": "plugin-competitors-2026-03-15",
+  "skill": "scout-competitors",
+  "topic": "plugin",
+  "item": "competitors",
+  "date": "2026-03-15",
+  "skill_version": "v1",
+  "input": "auto-detected from CLAUDE.md + plugin-plan.md",
+  "artifact_path": "experiments/S2-04-floor-variation/results/floor-20-run3-2026-03-15.md",
+  "experiment": "S2-04-floor-variation",
+  "floor": 20,
+  "source_commit": "6332881e3839fba486f721bad489de02fb38c99b"
+}

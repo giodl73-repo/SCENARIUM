@@ -29,7 +29,7 @@ Baseline date: 2026-08-19
 | SPEC-004 | REQ-006/012 | package/interface | current | Evidence packets are append-only, canonical, digest-validated, and closed over referenced runs. | unit/fixture tests | VAL-002 | Evidence Custodian | high | verified |
 | SPEC-005 | REQ-007/011 | package/interface | current | Every persisted document declares schema version; release docs declare MSRV, features, dependencies, and compatibility policy. | fixture/package inspection | ecosystem review | API Stability Reviewer | high | verified |
 | SPEC-006 | REQ-008 | interface/test | current | A RALLY fixture maps neutral types both directions or documents bounded incompatibilities before migration. | compatibility test | VAL-001 | Runtime Boundary Engineer | high | verified |
-| SPEC-007 | REQ-009 | interface/test | target | A SIGNALS sidecar maps to SCENARIUM provenance/evidence without importing SIGNALS policy. | round-trip fixture | VAL-002 | Runtime Boundary Engineer | medium | proposed |
+| SPEC-007 | REQ-009 | interface/test | current | A SIGNALS sidecar maps to SCENARIUM provenance/evidence without importing SIGNALS policy. | round-trip fixture | VAL-002 | Runtime Boundary Engineer | medium | verified |
 | SPEC-008 | REQ-010 | integration/test | target | A non-game consumer adopts SCENARIUM and records net neutral-code deletion. | integration test/diff | VAL-003 | Consumer Advocate | high | proposed |
 | SPEC-009 | REQ-013/014 | software/interface | current | All construction and decoding paths enforce shared invariants, and run identity includes seed-bearing inputs without supported-seed aliasing. | negative/collision tests | VAL-001/004 | Evidence Custodian | high | verified |
 | SPEC-010 | REQ-015/016 | software | current | Comparison rejects empty, mis-typed, targetless, or non-finite cases; bounded RNG uses rejection sampling. | boundary/algorithm tests | VAL-003/004 | Simulation Auditor | high | verified |
@@ -79,7 +79,7 @@ Baseline date: 2026-08-19
 | REQ-006/012 | SPEC-004 | covered | Canonical packet closure, duplicate rejection, and digest validation verified. |
 | REQ-007/011 | SPEC-005 | covered | Schema, fixture, MSRV, semver, feature, and dependency policy verified. |
 | REQ-008 | SPEC-006 | covered | RALLY commit `6b0bbc6` provides retained accepted/failure mappings, bounded incompatibilities, and the reviewed migration ledger. |
-| REQ-009 | SPEC-007 | covered | Implementation pending. |
+| REQ-009 | SPEC-007 | covered | SIGNALS `ea5f090` and SCENARIUM retained tests preserve known provenance and observable extensions. |
 | REQ-010 | SPEC-008 | covered | Adopter selection pending. |
 | REQ-013/014 | SPEC-009 | covered | Validated decoding and collision tests pass. |
 | REQ-015/016 | SPEC-010 | covered | Strict comparison and rejection-sampling tests pass. |
