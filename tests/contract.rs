@@ -158,6 +158,8 @@ fn findings_drive_structured_run_status() {
     assert_eq!(warning.location(), "run.metrics");
     assert_eq!(warning.message(), "review this");
     run.add_finding(warning);
+    assert_eq!(run.findings().len(), 1);
+    assert_eq!(run.findings()[0].code(), "S-WARN-001");
     assert_eq!(run.status(), RunStatus::Review);
     run.add_finding(Finding::new(Severity::Error, "S-ERR-001", "run", "invalid").unwrap());
     assert_eq!(run.status(), RunStatus::Error);

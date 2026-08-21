@@ -443,6 +443,10 @@ impl RunRecord {
         &self.metrics
     }
 
+    pub fn findings(&self) -> &[Finding] {
+        &self.findings
+    }
+
     pub fn record_metric(&mut self, metric: Metric) -> Result<(), Error> {
         if self.metrics.contains_key(metric.name()) {
             return Err(Error::DuplicateMetric(metric.name().to_string()));
