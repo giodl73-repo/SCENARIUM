@@ -20,7 +20,7 @@ Reviewer lenses: SCENARIUM `.roles/ROLE.md`
 | Simulation Auditor | pass | Run identity includes seed-bearing inputs, integer seeds remain distinct, and bounded sampling uses rejection sampling. |
 | Decision Skeptic | pass | Empty comparisons and baseline-as-candidate inputs fail; all four valid outcomes remain visible. |
 | Evidence Custodian | pass | Packet closure is canonical and real SIGNALS provenance plus unknown extension fields round-trip losslessly. |
-| Consumer Advocate | pass | CERES directly adopts SCENARIUM, removes its duplicate evidence family, and records 122 production lines added versus 123 removed. |
+| Consumer Advocate | pass | CERES proves net deletion; TERRAIN and BANISH prove the stop gates reject additive or net-expansive adoption. |
 | API Stability Reviewer | pass | `scenarium.v1`, retained fixtures, MSRV, semver, and compatibility rules are explicit. |
 | Rust Ecosystem Maintainer | pass | Rust 1.74 locked tests, stable Clippy/tests/docs/package, metadata, and dependency/feature policy are complete. |
 | Adversarial Evidence Reviewer | pass | Targetless, empty, mis-typed, overflow, invalid-digest, replacement, and missing-reference cases fail structurally. |
@@ -78,11 +78,15 @@ Reviewer lenses: SCENARIUM `.roles/ROLE.md`
 3. Keep registry publication prohibited; consumers use immutable source pins.
 4. Do not add RUNE descriptors from the TERRAIN projection; it exposed no
    repeated neutral seam with measurable deletion.
+5. Do not merge the BANISH prototype or the `197e503` accessor branch from this
+   evidence; compatibility without simplification is insufficient.
 
 ## Result
 
 The mission, requirements, specification, and package sequence are coherent.
 WP-001 through WP-005 pass their required role lenses. WP-006 closes as
 `stop-value-exhausted`: TERRAIN proves an additive projection but disproves its
-deletion thesis. SCENARIUM is package-ready and should not expand from that
-result. Registry publication is prohibited by portfolio policy.
+deletion thesis. WP-007 also closes as `stop-value-exhausted`: BANISH proves
+byte-identical compatibility but adds 362 production lines while removing 118.
+SCENARIUM is package-ready and should not expand from either result. Registry
+publication is prohibited by portfolio policy.

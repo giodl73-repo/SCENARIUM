@@ -21,6 +21,7 @@ SCENARIUM foundation, contract hardening, adoption, and release readiness.
 | EVID-SIGNALS-001 | fixture/review | SIGNALS commit `ea5f090`; `cargo test --test signals_interchange`; `docs/signals-interchange.md` | Provenance survives, unknown fields remain visible, and methodology remains outside SCENARIUM. | Real skill/topic/item/date/version/input provenance and artifact identity round-trip; extension fields survive; unsupported schema fails structurally. | passed |
 | EVID-ADOPT-001 | integration/analysis | CERES `71c7ef2`; `cargo test`; repeated real smithing comparison; `docs/scenarium-adoption.md` | Non-game adoption passes with deterministic comparison and net neutral-code deletion. | Repeated comparison and packet bytes match; packets use `scenarium.v1`; CERES removes its duplicate evidence family; production Rust is 122 added/123 removed. | passed |
 | EVID-TERRAIN-001 | integration/falsification | TERRAIN `29af76f`; retained steady-state/risky-reassignment fixtures; repeated `packet-csv`; TERRAIN `docs/scenarium-adoption.md` | A second direct non-game adopter either deletes a repeated neutral seam or stops without expanding SCENARIUM. | Twelve packet artifacts are byte-identical across repeated runs and use `scenarium.v1`; all prior TERRAIN artifacts remain. No duplicate neutral type family exists, so the deletion gate fails and broader abstraction stops. | passed |
+| EVID-BANISH-001 | integration/falsification | BANISH decision `43f01b7`; rejected prototype `4363c65`; SCENARIUM accessor proof `197e503`; BANISH `docs/scenarium-adoption.md` | A RALLY consumer either replaces duplicate neutral evidence with net simplification or stops without changing SCENARIUM. | First Winter deterministic tests pass and single-run, variant, and profile CLI output hashes match the baseline. The production-only diff is +362/-118, so the prototype and dependency are rejected and the accessor branch remains unmerged. | passed |
 | EVID-RELEASE-001 | package/review | `cargo package --locked`; `cargo doc --locked --no-deps`; `rustup run 1.74.0 cargo test --locked`; `docs/release-readiness.md` | Release contract is explicit and package-ready. | Stable and Rust 1.74 gates pass; lock format is Cargo 1.74-compatible; metadata, policies, and retained fixtures are packaged. | passed |
 
 ## Claim discipline
@@ -29,7 +30,9 @@ SCENARIUM foundation, contract hardening, adoption, and release readiness.
 - RALLY compatibility is proven; neutral-type deletion remains consumer-gated by
   the migration ledger.
 - Generality is supported by RALLY, SIGNALS, and CERES. TERRAIN proves the
-  existing contracts can project another domain, but its failed deletion gate
-  blocks broader abstraction claims and RUNE descriptor work.
+  existing contracts can project another domain but finds no neutral deletion.
+  BANISH proves compatibility with a game consumer but finds adapter cost
+  exceeds deletion. Both stop gates block broader abstraction claims, accessor
+  additions, and RUNE descriptor work.
 - Package readiness is supported by EVID-API-001 and EVID-RELEASE-001.
   Registry publication is prohibited by portfolio policy.
