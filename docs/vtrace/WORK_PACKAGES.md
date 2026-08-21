@@ -16,6 +16,8 @@ SCENARIUM commands or schema fields.
 | WP-003 | Prove SIGNALS artifact interchange. | One sidecar maps losslessly with provenance. | REQ-006/009; SPEC-004/007; IF-004 | SIGNALS fixture/adapter, SCENARIUM tests | WP-001 L1 complete. | Known fields round-trip; unknowns observable; no methodology dependency. | L0 yes / L1 yes / L2 yes | complete |
 | WP-004 | Prove a non-game adopter. | Reuse the crate and delete duplicated neutral code. | REQ-010; SPEC-008 | Selected consumer and SCENARIUM fixture | WP-002 or WP-003 L2 complete; adopter selected. | Deterministic run/comparison passes and net deletion is recorded. | L0 yes / L1 yes / L2 yes | complete |
 | WP-005 | Establish release readiness. | Publish a stable documented crate contract. | REQ-007/011; SPEC-005; IF-001/002 | Cargo metadata, docs, schemas, fixtures | WP-004 L2 complete. | MSRV/semver/features documented; package and compatibility gates pass. | L0 yes / L1 yes / L2 yes | complete |
+| WP-006 | Pressure-test TERRAIN adoption. | Reject abstraction when a second non-game adopter cannot delete neutral types. | REQ-010; SPEC-008 | TERRAIN adapter and retained packet | WP-005 complete; adopter selected. | Deterministic projection passes and deletion thesis is measured. | L0 yes / L1 yes / L2 yes | stop-value-exhausted |
+| WP-007 | Pressure-test BANISH migration. | Reject a compatible migration when adopter glue exceeds neutral deletion. | REQ-008/010; SPEC-006/008 | BANISH First Winter evidence family | WP-006 closed; named RALLY consumer selected. | CLI parity, structured failure, production-only LOC, and rollback are recorded. | L0 yes / L1 yes / L2 yes | stop-value-exhausted |
 
 ## WP-001: Core contract hardening
 
@@ -140,6 +142,30 @@ reports and cannot be deleted without violating ownership.
 
 Review gate: Territory Planner, Operations Buyer, Kernel Boundary Engineer,
 Report Contract Editor.
+
+## WP-007: BANISH migration pressure test
+
+Exit criteria:
+
+- BANISH roles review the owner boundary before implementation.
+- One complete First Winter evidence family replaces, rather than dual-writes,
+  RALLY neutral evidence records.
+- RALLY RNG, actor traces, and BANISH world-building policy remain local.
+- Single-run, variant-comparison, and profile-comparison CLI output remain
+  byte-identical.
+- Production-only Rust additions and removals are measured.
+- If adapter glue exceeds deleted neutral code, stop and retain the prototype
+  only as falsifying evidence.
+
+Outcome: closed with `stop-value-exhausted`. BANISH commit `43f01b7` records the
+decision. Rejected prototype `4363c65` proves deterministic and byte-identical
+compatibility but adds 362 production Rust lines while removing 118. The
+SCENARIUM accessor branch at `197e503` remains unmerged because BANISH does not
+justify the API additions after failing its deletion gate.
+
+Review gate: World-Building Systems Designer, Simulation Evidence Auditor,
+Shared Kernel Boundary Engineer, Skeptical Game Director, Evidence Contract
+Editor, Gameplay Programmer.
 
 ## Orphan Check
 

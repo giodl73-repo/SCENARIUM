@@ -84,6 +84,12 @@ The audit found no duplicate neutral type family to delete, so the result is a
 bounded additive projection and an explicit stop gate rather than a reason to
 expand SCENARIUM.
 
+BANISH provides a game-consumer migration pressure test. Its retained First
+Winter prototype preserves deterministic behavior and byte-identical CLI output,
+but adds 362 production Rust lines while removing 118. The migration and
+SCENARIUM accessor branch are therefore rejected: compatibility alone is not
+enough to justify abstraction.
+
 ## Implementation governance
 
 The controlled implementation goals, requirements, work packages, verification
