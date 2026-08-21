@@ -1,14 +1,40 @@
-# SCENARIUM Roles
+# SCENARIUM Review Panel
 
-Roles for reviewing SCENARIUM as shared scenario-evidence infrastructure.
+Use this panel when changing SCENARIUM's neutral scenario, comparison, or
+evidence contracts. Consumer-specific execution and decision policy remain in
+consumer repositories.
 
-| Role | Review question |
-|---|---|
-| Runtime Boundary Engineer | Does SCENARIUM stay independent of consumer execution and policy? |
-| Simulation Auditor | Are seeds, comparisons, serialization, and replay inputs deterministic? |
-| Decision Skeptic | Are inertia, regressions, mixed outcomes, and falsification visible rather than optimized away? |
-| Evidence Custodian | Do packets preserve provenance and reject silent artifact replacement? |
-| Consumer Advocate | Can RALLY and a non-game adopter delete duplicated neutral types without losing semantics? |
-| API Stability Reviewer | Are public types, serialized records, and migrations compatible across crate releases? |
-| Rust Ecosystem Maintainer | Are APIs idiomatic, dependencies justified, and MSRV or `no_std` expectations explicit? |
-| Adversarial Evidence Reviewer | Can malformed metrics, selective comparisons, or misleading provenance create a trustworthy-looking packet? |
+## Active Roles
+
+| Role | Protects | Invoke when |
+|---|---|---|
+| [Runtime Boundary Engineer](parliament/runtime-boundary-engineer.md) | Product-neutral ownership boundary | Adding capabilities, adapters, dependencies, or policy |
+| [Simulation Auditor](parliament/simulation-auditor.md) | Determinism and replay | Changing seeds, comparison, ordering, or serialization |
+| [Decision Skeptic](parliament/decision-skeptic.md) | Honest inertia and negative results | Changing statuses, findings, summaries, or recommendations |
+| [Evidence Custodian](parliament/evidence-custodian.md) | Provenance and append-only packets | Changing evidence packets, artifacts, digests, or document envelopes |
+| [Consumer Advocate](stakeholders/consumer-advocate.md) | Reusable contracts without migration tax | Changing public types or proposing a consumer migration |
+| [Adversarial Evidence Reviewer](stakeholders/adversarial-evidence-reviewer.md) | Resistance to trustworthy-looking bad evidence | Changing validation, caller-supplied data, or trust claims |
+
+## Core Tensions
+
+| Pulls | Against | Because |
+|---|---|---|
+| Runtime Boundary Engineer | Consumer Advocate | A convenient consumer feature can import product policy into the neutral crate. |
+| Simulation Auditor | Consumer Advocate | Stronger determinism constraints can make legitimate adapters harder to implement. |
+| Decision Skeptic | Evidence Custodian | A complete packet can still frame selective or misleading comparisons. |
+| Evidence Custodian | Adversarial Evidence Reviewer | Preserved provenance proves lineage, not truthfulness or completeness. |
+| Consumer Advocate | Decision Skeptic | A simpler result may hide mixed outcomes that consumers need to interpret themselves. |
+
+## Review Order
+
+1. Simulation Auditor establishes deterministic behavior.
+2. Evidence Custodian and Adversarial Evidence Reviewer establish what the
+   packet proves and what it cannot prove.
+3. Runtime Boundary Engineer rejects consumer policy in shared contracts.
+4. Decision Skeptic checks that regressions and inertia remain visible.
+5. Consumer Advocate evaluates whether the surviving contract earns its
+   migration and maintenance cost.
+
+Correctness, provenance loss, silent replacement, and hidden decision policy
+are blocking. Adoption convenience is advisory unless a named consumer can
+delete more duplicated neutral code than the shared dependency adds.
