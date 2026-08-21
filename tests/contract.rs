@@ -146,7 +146,18 @@ fn target_metrics_require_a_finite_target() {
 fn findings_drive_structured_run_status() {
     let (mut run, _) = run_pair("seed");
     assert_eq!(run.status(), RunStatus::Pass);
-    run.add_finding(Finding::new(Severity::Warning, "S-WARN-001", "run", "review this").unwrap());
+    let warning = Finding::new(
+        Severity::Warning,
+        "S-WARN-001",
+        "run.metrics",
+        "review this",
+    )
+    .unwrap();
+    assert_eq!(warning.severity(), Severity::Warning);
+    assert_eq!(warning.code(), "S-WARN-001");
+    assert_eq!(warning.location(), "run.metrics");
+    assert_eq!(warning.message(), "review this");
+    run.add_finding(warning);
     assert_eq!(run.status(), RunStatus::Review);
     run.add_finding(Finding::new(Severity::Error, "S-ERR-001", "run", "invalid").unwrap());
     assert_eq!(run.status(), RunStatus::Error);

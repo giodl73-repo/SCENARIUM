@@ -289,6 +289,18 @@ impl Finding {
     pub fn severity(&self) -> Severity {
         self.severity
     }
+
+    pub fn code(&self) -> &str {
+        &self.code
+    }
+
+    pub fn location(&self) -> &str {
+        &self.location
+    }
+
+    pub fn message(&self) -> &str {
+        &self.message
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
