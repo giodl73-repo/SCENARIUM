@@ -29,6 +29,11 @@ cargo package --locked
 rustup run 1.74.0 cargo test --locked
 ```
 
+The Rust 1.74 lane is evidence only when the exact toolchain is installed and
+the command completes. If `rustup` is unavailable or the 1.74 toolchain is
+missing, use the recorded CI evidence or install the exact toolchain before
+claiming current MSRV validation.
+
 The retained `scenarium.v1` and SIGNALS fixtures are included in the package.
 CI runs both the stable toolchain gates and the Rust 1.74 test lane.
 
