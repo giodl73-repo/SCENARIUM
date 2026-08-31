@@ -36,3 +36,7 @@ SCENARIUM foundation, contract hardening, adoption, and release readiness.
   additions, and RUNE descriptor work.
 - Package readiness is supported by EVID-API-001 and EVID-RELEASE-001.
   Registry publication is prohibited by portfolio policy.
+- `docs/adoption-gates.v1.json` records approval state for RALLY, SIGNALS,
+  CERES, TERRAIN, and BANISH so compatibility proofs cannot be read as
+  automatic migration, registry publication, accessor expansion, or consumer
+  policy approval.

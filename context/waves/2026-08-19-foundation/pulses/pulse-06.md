@@ -15,6 +15,8 @@ release, and publication decisions rather than only recording process risk.
   product policy, or external evidence truth claims.
 - Preserved the release-readiness MSRV note that exact Rust 1.74 evidence
   requires the installed toolchain or recorded CI evidence.
+- Added `docs/adoption-gates.v1.json` so compatibility, migration approval,
+  registry publication, and SCENARIUM expansion state can be checked as data.
 
 ## Validation
 
@@ -37,6 +39,8 @@ evidence without installing the exact toolchain or citing recorded CI evidence.
 
 ## Result
 
-SCENARIUM now has retained tests citing all four open repo-local PITFALL risks:
+SCENARIUM now has retained tests citing all four repo-local PITFALL risks:
 neutral contract absorption, comparison-status recommendation overread,
 evidence-packet truthfulness overclaim, and compatibility-as-migration-approval.
+`SCEN-PF-04` is mitigated by the machine-readable adoption gate matrix;
+`SCEN-PF-01`, `SCEN-PF-02`, and `SCEN-PF-03` remain open.

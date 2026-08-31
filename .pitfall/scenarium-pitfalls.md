@@ -131,7 +131,7 @@ packets prove lineage and structure, not truth or completeness.
 
 ## SCEN-PF-04: Compatibility Proof Becomes Migration Approval
 
-**Status:** OPEN
+**Status:** MITIGATED
 
 **Pattern:** Passing RALLY, SIGNALS, CERES, TERRAIN, or BANISH compatibility
 evidence is treated as approval to migrate consumers, expand SCENARIUM, publish
@@ -168,12 +168,16 @@ TERRAIN and BANISH deliberately prove stop gates as well as compatibility.
 
 **Structural solution:** Keep adoption approval tied to consumer-owned deletion
 ledgers, explicit stop-gate outcomes, and portfolio policy against registry
-publication.
+publication. `docs/adoption-gates.v1.json` now records per-consumer approval
+state so compatibility evidence cannot be promoted into migration,
+publication, accessor-expansion, or consumer-policy approval.
 
 **Evidence:** `docs/vtrace/EVIDENCE.md`, `docs/vtrace/VALIDATION.md`,
 `README.md`, and `docs/release-readiness.md`.
 
-**Test:** `tests/pitfall_policy.rs`
+**Test:** `tests/pitfall_policy.rs` parses `docs/adoption-gates.v1.json` and
+requires compatibility to remain separate from migration approval, registry
+publication, and SCENARIUM expansion.
 
 ## SCEN-PF-05: MSRV Claim Uses Ambient Stable Toolchain
 

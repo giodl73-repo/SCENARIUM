@@ -49,3 +49,8 @@ Release readiness is supported by:
 This evidence supports the current neutral contract. It does not permit
 registry publication, automatic RALLY consumer migration, or new domain policy
 inside SCENARIUM.
+
+`docs/adoption-gates.v1.json` records the same boundary in machine-readable
+form. Compatibility evidence is necessary but not sufficient: migration
+approval requires consumer-owned review, net neutral-code deletion where
+applicable, and no new consumer policy in SCENARIUM.

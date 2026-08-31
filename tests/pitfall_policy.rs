@@ -63,6 +63,9 @@ fn compatibility_proof_does_not_become_migration_approval() {
     let release = include_str!("../docs/release-readiness.md");
     let evidence = include_str!("../docs/vtrace/EVIDENCE.md");
     let consumer = include_str!("../.roles/stakeholders/consumer-advocate.md");
+    let gates: serde_json::Value =
+        serde_json::from_str(include_str!("../docs/adoption-gates.v1.json"))
+            .expect("adoption gates must remain valid JSON");
 
     assert!(normalized(readme).contains("compatibility alone is not enough to justify abstraction"));
     assert!(normalized(release).contains("does not permit registry publication"));
@@ -70,4 +73,26 @@ fn compatibility_proof_does_not_become_migration_approval() {
     assert!(evidence.contains("stop gates block broader abstraction claims"));
     assert!(evidence.contains("stop gates block broader abstraction claims"));
     assert!(consumer.contains("deleted consumer code, added adapter code"));
+    assert_eq!(
+        gates["registry_publication"],
+        "prohibited_by_portfolio_policy"
+    );
+    assert_eq!(gates["automatic_consumer_migration"], false);
+    assert!(normalized(gates["approval_rule"].as_str().unwrap())
+        .contains("compatibility evidence is necessary but not sufficient"));
+
+    let rows = gates["gates"]
+        .as_array()
+        .expect("adoption gates should list consumer rows");
+    assert!(rows.len() >= 5);
+    for row in rows {
+        assert_eq!(row["compatibility_status"], "passed");
+        assert_eq!(row["scenarium_expansion_allowed"], false);
+        assert!(row["migration_approval"]
+            .as_str()
+            .is_some_and(|status| !status.eq("approved_by_compatibility")));
+    }
+    assert!(rows.iter().any(|row| {
+        row["consumer"] == "BANISH" && row["migration_approval"] == "rejected_stop_value_exhausted"
+    }));
 }
