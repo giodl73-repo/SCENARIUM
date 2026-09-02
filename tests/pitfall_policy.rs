@@ -9,15 +9,21 @@ fn neutral_contract_does_not_absorb_consumer_policy() {
     let plan = include_str!("../PRODUCT_PLAN.md");
     let roles = include_str!("../.roles/ROLE.md");
     let validation = include_str!("../docs/vtrace/VALIDATION.md");
+    let boundary_manifest = include_str!("../docs/pitfall-boundaries.v1.json");
 
     assert!(normalized(readme).contains("SCENARIUM owns only the reusable typed contracts"));
     assert!(
         normalized(readme).contains("consumer-specific adapters remain in consumer repositories")
     );
+    assert!(normalized(readme).contains("named deletion ledger and consumer-owned review"));
     assert!(plan.contains("SIGNALS retains techniques, skills, scoring rubrics"));
     assert!(roles.contains("Runtime Boundary Engineer"));
     assert!(roles.contains("Consumer Advocate"));
+    assert!(roles.contains("consumer semantics to the shared crate"));
     assert!(validation.contains("consumer metrics stay local"));
+    assert!(boundary_manifest.contains("SCEN-PF-01"));
+    assert!(boundary_manifest.contains("consumer semantics in shared crate"));
+    assert!(boundary_manifest.contains("neutral duplicate deletion proof"));
 }
 
 #[test]
@@ -27,14 +33,21 @@ fn comparison_status_does_not_become_recommendation() {
     let decision_skeptic = include_str!("../.roles/parliament/decision-skeptic.md");
     let contract_tests = include_str!("contract.rs");
     let compare_src = include_str!("../src/compare.rs");
+    let roles = include_str!("../.roles/ROLE.md");
+    let boundary_manifest = include_str!("../docs/pitfall-boundaries.v1.json");
 
     assert!(readme.contains("No automatic recommendation"));
+    assert!(readme.contains("No product decision"));
     assert!(decision_skeptic.contains("Protect the evidence needed to decide not to adopt"));
     assert!(decision_skeptic.contains("Block APIs that hide negative evidence"));
+    assert!(normalized(roles).contains("customer decision authority"));
     assert!(contract_tests.contains("ComparisonStatus::Regressed"));
     assert!(contract_tests.contains("ComparisonStatus::Mixed"));
     assert!(contract_tests.contains("ComparisonStatus::Equivalent"));
     assert!(compare_src.contains("ComparisonStatus"));
+    assert!(boundary_manifest.contains("SCEN-PF-02"));
+    assert!(boundary_manifest.contains("automatic recommendation"));
+    assert!(boundary_manifest.contains("migration approval"));
 }
 
 #[test]
@@ -45,6 +58,9 @@ fn packet_closure_does_not_prove_evidence_truthfulness() {
     let requirements = include_str!("../docs/vtrace/REQUIREMENTS.md");
     let reviewer = include_str!("../.roles/stakeholders/adversarial-evidence-reviewer.md");
     let pitfalls = include_str!("../.pitfall/scenarium-pitfalls.md");
+    let readme = include_str!("../README.md");
+    let roles = include_str!("../.roles/ROLE.md");
+    let boundary_manifest = include_str!("../docs/pitfall-boundaries.v1.json");
 
     assert!(evidence_src.contains("EvidencePacket"));
     assert!(evidence_src.contains("MissingPacketRun"));
@@ -54,6 +70,11 @@ fn packet_closure_does_not_prove_evidence_truthfulness() {
     assert!(reviewer.contains("trustworthy-looking packet"));
     assert!(reviewer.contains("SCENARIUM-verified facts"));
     assert!(pitfalls.contains("lineage and structure, not truth"));
+    assert!(readme.contains("No truthfulness"));
+    assert!(roles.contains("representative, or sufficient"));
+    assert!(boundary_manifest.contains("SCEN-PF-03"));
+    assert!(boundary_manifest.contains("packet closure proves truthfulness"));
+    assert!(boundary_manifest.contains("lineage and structure boundary"));
 }
 
 #[test]

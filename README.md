@@ -13,6 +13,9 @@ SCENARIO -> SEEDED RUNS -> INERTIA COMPARISON -> FINDINGS -> EVIDENCE PACKET
 RALLY continues to own game and playtest mechanics. SIGNALS continues to own
 feature-decision workflows, techniques, and review policy. SCENARIUM owns only
 the reusable typed contracts between a scenario runner and its evidence.
+Repeated adopter requests do not move game mechanics, decision methods, domain
+metrics, orchestration, recommendation policy, or visualization behavior into
+the shared crate without a named deletion ledger and consumer-owned review.
 
 The retained [SIGNALS interchange proof](docs/signals-interchange.md) maps real
 artifact provenance without importing SIGNALS methodology.
@@ -116,6 +119,10 @@ is prohibited by portfolio policy; SCENARIUM remains source-consumed.
 - No LLM or agent runtime.
 - No solver, optimizer, statistical test, or visualization framework.
 - No automatic recommendation that hides the underlying metric deltas.
+- No product decision, adoption recommendation, policy-ready result, customer
+  decision authority, or migration approval from comparison status alone.
+- No truthfulness, completeness, representativeness, or external-claim
+  sufficiency guarantee from packet closure alone.
 - No mutable global run registry.
 
 ## License

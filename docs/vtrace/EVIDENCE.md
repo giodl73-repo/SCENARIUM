@@ -40,3 +40,7 @@ SCENARIUM foundation, contract hardening, adoption, and release readiness.
   CERES, TERRAIN, and BANISH so compatibility proofs cannot be read as
   automatic migration, registry publication, accessor expansion, or consumer
   policy approval.
+- `docs/pitfall-boundaries.v1.json` records the neutral-contract,
+  recommendation, and packet-truth boundaries so shared contracts cannot absorb
+  consumer policy, comparison status cannot become decision authority, and
+  packet closure cannot become evidence truthfulness.

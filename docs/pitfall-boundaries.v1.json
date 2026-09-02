@@ -1,0 +1,109 @@
+{
+  "$schema": "scenarium.pitfall-boundaries.v1",
+  "owner": "SCENARIUM maintainer",
+  "purpose": "Machine-readable boundaries for neutral contracts, comparison recommendations, and evidence-packet truth claims.",
+  "authority": {
+    "neutral_contract": "run, comparison, finding, provenance, packet, and schema structure",
+    "consumer_policy": "owned by adopter repositories and their domain reviewers",
+    "comparison_status": "metric-delta classification over explicit baseline and candidate runs",
+    "recommendation": "consumer-owned decision after review of domain goals, costs, risks, and negative evidence",
+    "packet_closure": "append-only reference and lineage structure",
+    "truthfulness": "caller, source owner, or external evidence reviewer responsibility"
+  },
+  "pitfall_boundaries": [
+    {
+      "entryId": "SCEN-PF-01",
+      "requiredOwners": [
+        "Runtime Boundary Engineer",
+        "Consumer Advocate",
+        "consumer repository owner"
+      ],
+      "sourceLayer": "public Rust API, README examples, adopter notes, VTRACE validation, and portfolio dependency records",
+      "maySupport": [
+        "reusable run contract",
+        "comparison contract",
+        "finding contract",
+        "provenance contract",
+        "packet contract",
+        "named deletion-ledger candidate"
+      ],
+      "blockedClaims": [
+        "game mechanics ownership",
+        "decision method ownership",
+        "domain metric ownership",
+        "orchestration policy ownership",
+        "recommendation policy ownership",
+        "visualization behavior ownership",
+        "consumer semantics in shared crate"
+      ],
+      "requiredEvidence": [
+        "named deletion ledger",
+        "consumer-owned semantics citation",
+        "Runtime Boundary Engineer review",
+        "Consumer Advocate review",
+        "neutral duplicate deletion proof"
+      ]
+    },
+    {
+      "entryId": "SCEN-PF-02",
+      "requiredOwners": [
+        "Decision Skeptic",
+        "consumer repository owner"
+      ],
+      "sourceLayer": "ComparisonStatus, README examples, evidence packets, downstream reports, customer demos, and research-paper language",
+      "maySupport": [
+        "improved metric status",
+        "regressed metric status",
+        "mixed metric status",
+        "equivalent metric status",
+        "recommendation input"
+      ],
+      "blockedClaims": [
+        "automatic recommendation",
+        "product decision",
+        "adoption recommendation",
+        "policy-ready result",
+        "customer decision authority",
+        "migration approval"
+      ],
+      "requiredEvidence": [
+        "metric deltas",
+        "negative evidence",
+        "consumer-owned review",
+        "decision rationale outside SCENARIUM",
+        "explicit non-recommendation wording"
+      ]
+    },
+    {
+      "entryId": "SCEN-PF-03",
+      "requiredOwners": [
+        "Evidence Custodian",
+        "Adversarial Evidence Reviewer",
+        "caller"
+      ],
+      "sourceLayer": "EvidencePacket, provenance records, VTRACE evidence/review docs, release notes, research papers, and downstream decision systems",
+      "maySupport": [
+        "append-only lineage",
+        "reference closure",
+        "artifact digest custody",
+        "packet structure validation",
+        "truthfulness review input"
+      ],
+      "blockedClaims": [
+        "input metrics are true",
+        "artifacts are complete",
+        "findings are representative",
+        "evidence is sufficient for external claims",
+        "packet closure proves truthfulness",
+        "packet closure proves completeness"
+      ],
+      "requiredEvidence": [
+        "caller-supplied provenance",
+        "source validation",
+        "adversarial evidence review",
+        "external claim scope",
+        "lineage and structure boundary"
+      ]
+    }
+  ]
+}

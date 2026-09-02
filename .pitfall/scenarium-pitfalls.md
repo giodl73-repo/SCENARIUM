@@ -2,7 +2,7 @@
 
 ## SCEN-PF-01: Neutral Contract Becomes Consumer Policy
 
-**Status:** OPEN
+**Status:** MITIGATED
 
 **Pattern:** A repeated adopter request adds game mechanics, decision methods,
 domain metrics, orchestration, recommendation policy, or visualization
@@ -37,16 +37,18 @@ convenience method, but repeated conveniences can quietly move consumer
 ownership into the neutral crate.
 
 **Structural solution:** Require Runtime Boundary Engineer and Consumer
-Advocate review plus a named deletion ledger before adding adopter-shaped API.
+Advocate review plus a named deletion ledger before adding adopter-shaped API,
+with machine-readable blocked claims for consumer policy absorption.
 
-**Evidence:** `CLAUDE.md`, `PRODUCT_PLAN.md`, `.roles/ROLE.md`,
-`docs/vtrace/VALIDATION.md`, and `docs/vtrace/EVIDENCE.md`.
+**Evidence:** `docs/pitfall-boundaries.v1.json`, `CLAUDE.md`,
+`PRODUCT_PLAN.md`, `.roles/ROLE.md`, `docs/vtrace/VALIDATION.md`, and
+`docs/vtrace/EVIDENCE.md`.
 
 **Test:** `tests/pitfall_policy.rs`
 
 ## SCEN-PF-02: Comparison Status Becomes Recommendation
 
-**Status:** OPEN
+**Status:** MITIGATED
 
 **Pattern:** `Improved`, `Regressed`, `Mixed`, or `Equivalent` comparison
 status is presented as a product decision, adoption recommendation, or
@@ -78,16 +80,19 @@ downstream copy can turn metric deltas into decision authority without adding
 consumer review.
 
 **Structural solution:** Keep Decision Skeptic review and non-goal language
-attached to public examples and reject automatic recommendation helpers.
+attached to public examples and reject automatic recommendation helpers,
+product decisions, policy-ready claims, and migration approval from status
+alone.
 
-**Evidence:** `README.md`, `.roles/parliament/decision-skeptic.md`,
-`src/compare.rs`, and `tests/contract.rs`.
+**Evidence:** `docs/pitfall-boundaries.v1.json`, `README.md`,
+`.roles/parliament/decision-skeptic.md`, `.roles/ROLE.md`, `src/compare.rs`,
+and `tests/contract.rs`.
 
 **Test:** `tests/pitfall_policy.rs`
 
 ## SCEN-PF-03: Packet Completeness Becomes Evidence Truthfulness
 
-**Status:** OPEN
+**Status:** MITIGATED
 
 **Pattern:** A reference-closed, append-only packet is treated as proving that
 the input metrics, artifacts, or findings are true, complete, representative,
@@ -121,10 +126,11 @@ papers, and downstream decision systems.
 it can be overread as epistemic validation of caller-supplied evidence.
 
 **Structural solution:** Preserve adversarial evidence review and wording that
-packets prove lineage and structure, not truth or completeness.
+packets prove lineage and structure, not truth, completeness,
+representativeness, or external-claim sufficiency.
 
-**Evidence:** `src/evidence.rs`, `docs/vtrace/REVIEW.md`,
-`docs/vtrace/EVIDENCE.md`, and
+**Evidence:** `docs/pitfall-boundaries.v1.json`, `src/evidence.rs`,
+`docs/vtrace/REVIEW.md`, `docs/vtrace/EVIDENCE.md`, `.roles/ROLE.md`, and
 `.roles/stakeholders/adversarial-evidence-reviewer.md`.
 
 **Test:** `tests/pitfall_policy.rs`

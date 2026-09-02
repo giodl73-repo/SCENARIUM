@@ -79,3 +79,22 @@ preserve unknown fields, and reject unsupported schemas.
 
 **Evidence:** `tests/signals_interchange.rs`, `docs/signals-interchange.md`,
 and `cargo test --test signals_interchange`.
+
+## SCEN-I-06: Neutrality, Recommendation, And Packet Truth Boundaries Are Machine-Readable
+
+**Status:** VERIFIED
+
+**Claim:** SCENARIUM keeps neutral-contract, comparison-recommendation, and
+evidence-truth boundaries in a machine-readable manifest that is also routed
+through roles, README non-goals, VTRACE evidence, and focused tests.
+
+**Why it matters:** A useful shared evidence crate fails if adopter convenience
+imports consumer policy, metric status becomes a recommendation, or structural
+packet closure is mistaken for truthfulness.
+
+**Enforcement:** `tests/pitfall_policy.rs` asserts the manifest, role routing,
+README boundaries, VTRACE evidence wording, contract tests, comparison states,
+and evidence-packet failure modes.
+
+**Evidence:** `docs/pitfall-boundaries.v1.json`, `.roles/ROLE.md`,
+`README.md`, `docs/vtrace/EVIDENCE.md`, and `tests/pitfall_policy.rs`.
