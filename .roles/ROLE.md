@@ -38,3 +38,20 @@ consumer repositories.
 Correctness, provenance loss, silent replacement, and hidden decision policy
 are blocking. Adoption convenience is advisory unless a named consumer can
 delete more duplicated neutral code than the shared dependency adds.
+
+## PITFALL gate routing
+
+Invoke the Runtime Boundary Engineer and Consumer Advocate before repeated
+adopter requests add game mechanics, decision methods, domain metrics,
+orchestration policy, recommendation policy, visualization behavior, or
+consumer semantics to the shared crate.
+
+Invoke the Decision Skeptic before `Improved`, `Regressed`, `Mixed`, or
+`Equivalent` comparison status is used as an automatic recommendation, product
+decision, adoption recommendation, policy-ready result, customer decision
+authority, or migration approval.
+
+Invoke the Evidence Custodian and Adversarial Evidence Reviewer before a
+reference-closed packet is used to claim that caller-supplied metrics,
+artifacts, or findings are true, complete, representative, or sufficient for
+external claims.

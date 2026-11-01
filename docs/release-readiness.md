@@ -29,6 +29,11 @@ cargo package --locked
 rustup run 1.74.0 cargo test --locked
 ```
 
+The Rust 1.74 lane is evidence only when the exact toolchain is installed and
+the command completes. If `rustup` is unavailable or the 1.74 toolchain is
+missing, use the recorded CI evidence or install the exact toolchain before
+claiming current MSRV validation.
+
 The retained `scenarium.v1` and SIGNALS fixtures are included in the package.
 CI runs both the stable toolchain gates and the Rust 1.74 test lane.
 
@@ -44,3 +49,8 @@ Release readiness is supported by:
 This evidence supports the current neutral contract. It does not permit
 registry publication, automatic RALLY consumer migration, or new domain policy
 inside SCENARIUM.
+
+`docs/adoption-gates.v1.json` records the same boundary in machine-readable
+form. Compatibility evidence is necessary but not sufficient: migration
+approval requires consumer-owned review, net neutral-code deletion where
+applicable, and no new consumer policy in SCENARIUM.

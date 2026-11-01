@@ -20,6 +20,7 @@ decision methods, domain metrics, or orchestration.
 | 03 | RALLY compatibility | pending | Prove type and fixture compatibility before migration. |
 | 04 | SIGNALS evidence bridge | pending | Map one append-only JSON sidecar into a packet. |
 | 05 | First non-game consumer | pending | Prove reuse and measure deleted code. |
+| 06 | PITFALL use-case pass | complete | Added use-case-first fields and retained tests for open neutral-contract, comparison, evidence-packet, and migration-approval pitfalls. |
 
 ## Success criteria
 
