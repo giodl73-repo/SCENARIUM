@@ -1,0 +1,54 @@
+{
+  "schema": "scenarium.adoption-gates.v1",
+  "crate": "SCENARIUM",
+  "registry_publication": "prohibited_by_portfolio_policy",
+  "automatic_consumer_migration": false,
+  "approval_rule": "compatibility evidence is necessary but not sufficient; migration approval requires consumer-owned review, net neutral-code deletion, and no new consumer policy in SCENARIUM",
+  "gates": [
+    {
+      "consumer": "RALLY",
+      "evidence_id": "EVID-RALLY-001",
+      "compatibility_status": "passed",
+      "migration_approval": "consumer_gated_not_automatic",
+      "deletion_ledger_required": true,
+      "scenarium_expansion_allowed": false,
+      "notes": "RALLY compatibility is proven, but game mechanics and consumer migration remain RALLY-owned."
+    },
+    {
+      "consumer": "SIGNALS",
+      "evidence_id": "EVID-SIGNALS-001",
+      "compatibility_status": "passed",
+      "migration_approval": "interchange_only_not_methodology_adoption",
+      "deletion_ledger_required": false,
+      "scenarium_expansion_allowed": false,
+      "notes": "SIGNALS provenance interchange survives without importing SIGNALS methodology or decision policy."
+    },
+    {
+      "consumer": "CERES",
+      "evidence_id": "EVID-ADOPT-001",
+      "compatibility_status": "passed",
+      "migration_approval": "approved_for_recorded_neutral_contract_only",
+      "deletion_ledger_required": true,
+      "scenarium_expansion_allowed": false,
+      "notes": "CERES adoption records net neutral-code deletion; domain metrics and economics remain CERES-owned."
+    },
+    {
+      "consumer": "TERRAIN",
+      "evidence_id": "EVID-TERRAIN-001",
+      "compatibility_status": "passed",
+      "migration_approval": "rejected_stop_value_exhausted",
+      "deletion_ledger_required": true,
+      "scenarium_expansion_allowed": false,
+      "notes": "TERRAIN projection is compatible but finds no repeated neutral type family to delete."
+    },
+    {
+      "consumer": "BANISH",
+      "evidence_id": "EVID-BANISH-001",
+      "compatibility_status": "passed",
+      "migration_approval": "rejected_stop_value_exhausted",
+      "deletion_ledger_required": true,
+      "scenarium_expansion_allowed": false,
+      "notes": "BANISH compatibility passes, but adapter cost exceeds neutral-code deletion and the accessor branch remains unmerged."
+    }
+  ]
+}

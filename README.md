@@ -3,6 +3,25 @@
 Deterministic scenario runs, inertia-first comparisons, and portable evidence
 packets for Rust systems.
 
+## Compare runs in your browser
+
+Open the [Rust/WASM comparison workbench](https://giodl73-repo.github.io/SCENARIUM/)
+to load two `scenarium.v1` run records, inspect metric deltas, findings and
+caller-supplied provenance, and download the native comparison. Six synthetic
+examples cover all four outcomes, target directions, and improved metrics with
+error findings still present. Your inputs stay in the tab.
+
+The page exposes the existing Rust decoder and comparison core. It does not
+execute experiments or recommend adoption. Unknown fields are reported;
+original input downloads retain uploaded UTF-8 text until editing or replacement.
+Source, compiled WASM, dependency notices and build provenance are downloadable
+from the page. See [BUILD.md](BUILD.md) for reproduction and limits, and
+[browser verification scope](docs/vtrace/BROWSER_COMPARISON.md).
+
+This unpublished first-party companion has its own `web/adapter` workspace and
+toolchain. The foundation's Rust 1.74 support, API and dependency policy remain
+unchanged. No external adoption or neutral-code deletion is claimed by the UI.
+
 SCENARIUM extracts the product-neutral evidence spine already proven by RALLY
 and the decision discipline used by SIGNALS:
 
@@ -13,6 +32,9 @@ SCENARIO -> SEEDED RUNS -> INERTIA COMPARISON -> FINDINGS -> EVIDENCE PACKET
 RALLY continues to own game and playtest mechanics. SIGNALS continues to own
 feature-decision workflows, techniques, and review policy. SCENARIUM owns only
 the reusable typed contracts between a scenario runner and its evidence.
+Repeated adopter requests do not move game mechanics, decision methods, domain
+metrics, orchestration, recommendation policy, or visualization behavior into
+the shared crate without a named deletion ledger and consumer-owned review.
 
 The retained [SIGNALS interchange proof](docs/signals-interchange.md) maps real
 artifact provenance without importing SIGNALS methodology.
@@ -116,6 +138,10 @@ is prohibited by portfolio policy; SCENARIUM remains source-consumed.
 - No LLM or agent runtime.
 - No solver, optimizer, statistical test, or visualization framework.
 - No automatic recommendation that hides the underlying metric deltas.
+- No product decision, adoption recommendation, policy-ready result, customer
+  decision authority, or migration approval from comparison status alone.
+- No truthfulness, completeness, representativeness, or external-claim
+  sufficiency guarantee from packet closure alone.
 - No mutable global run registry.
 
 ## License
