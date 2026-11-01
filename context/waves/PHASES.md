@@ -4,7 +4,8 @@ Work is organized into small waves and pulses.
 
 ## Active wave
 
-- `2026-08-19-foundation`
+- `2026-11-01-browser-comparison` — first-party companion workbench; existing
+  foundation/adoption evidence remains in `2026-08-19-foundation` and docs/vtrace.
 
 ## Protocol
 
