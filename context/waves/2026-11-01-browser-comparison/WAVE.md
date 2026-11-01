@@ -35,12 +35,18 @@ and replay browser cases before the TRACKER snapshot. Producer roles follow the
 repository's stated order. The browser VTRACE supplement maps existing contract
 requirements without promoting consumer adoption or foundation readiness scores.
 
-Local qualification: foundation's 14 tests pass on Rust 1.74.0 and 1.95.0;
+The recorded TRACKER entry 863bf838626121c860e6a043a282fca9f236d7cd contained
+earlier PITFALL governance work absent from public main. That complete branch
+is merged alongside the companion, preserving its four policy checks and all
+governance records. Foundation production source, manifest and lock remain
+identical to both entries.
+
+Local qualification: foundation's 18 tests pass on Rust 1.74.0 and 1.95.0;
 foundation fmt, strict Clippy, docs and package verification pass. The companion's
 six native tests cover outcome/report contracts, unknown fields, invalid records
 and admission limits. Strict host and WASM Clippy pass. The pinned build generates
 21 native reference responses and a 34-file site within the 5 MB delivery budget.
-Browser checks exercise the real Rust worker, own inputs and all examples,
+Nineteen browser checks exercise the real Rust worker, own inputs and all examples,
 original UTF-8/CRLF/large-integer custody, invalid replacement, late file reads,
 file/worker deadlines, keyboard restore, no-JS downloads and desktop/mobile layouts.
 Source and compiled artifact remain independently inspectable. TRACKER owns the
